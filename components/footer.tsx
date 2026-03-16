@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-accent text-accent-foreground py-16 lg:py-20">
+    <footer className="bg-black text-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
           {/* Logo & Description */}
@@ -13,10 +13,10 @@ export function Footer() {
             <Link href="/" className="font-serif text-3xl font-semibold tracking-tight uppercase">
               Acorde
             </Link>
-            <p className="text-sm tracking-widest uppercase text-accent-foreground/70 mt-1">
+            <p className="text-sm tracking-widest uppercase text-white/70 mt-1">
               Cervecería
             </p>
-            <p className="mt-6 text-accent-foreground/80 leading-relaxed max-w-xs">
+            <p className="mt-6 text-white/80 leading-relaxed max-w-xs">
               El arte del tapeo tradicional en el corazón de Goya. 
               Donde cada detalle cuenta una historia.
             </p>
@@ -29,7 +29,7 @@ export function Footer() {
                   </svg>
                 ))}
               </div>
-              <span className="text-xs text-accent-foreground/60 tracking-wider">MAHOU</span>
+              <span className="text-xs text-white/60 tracking-wider">MAHOU</span>
             </div>
           </div>
 
@@ -38,27 +38,27 @@ export function Footer() {
             <h4 className="font-medium text-lg mb-6">Enlaces</h4>
             <ul className="space-y-4">
               <li>
-                <Link href="#nosotros" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                <Link href="#nosotros" className="text-white/80 hover:text-white transition-colors">
                   La Cervecería
                 </Link>
               </li>
               <li>
-                <Link href="#carta" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                <Link href="#carta" className="text-white/80 hover:text-white transition-colors">
                   Carta
                 </Link>
               </li>
               <li>
-                <Link href="#galeria" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                <Link href="#galeria" className="text-white/80 hover:text-white transition-colors">
                   Galería
                 </Link>
               </li>
               <li>
-                <Link href="#contacto" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                <Link href="#contacto" className="text-white/80 hover:text-white transition-colors">
                   Contacto
                 </Link>
               </li>
               <li>
-                <Link href="#reservar" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors">
+                <Link href="#reservar" className="text-white/80 hover:text-white transition-colors">
                   Reservar
                 </Link>
               </li>
@@ -73,7 +73,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-sm bg-accent-foreground/10 flex items-center justify-center hover:bg-accent-foreground/20 transition-colors"
+                className="w-10 h-10 rounded-sm bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -82,17 +82,17 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-sm bg-accent-foreground/10 flex items-center justify-center hover:bg-accent-foreground/20 transition-colors"
+                className="w-10 h-10 rounded-sm bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
-            <div className="mt-8 text-accent-foreground/80">
+            <div className="mt-8 text-white/80">
               <p>C. de Jorge Juan, 104</p>
               <p>Salamanca, 28009 Madrid</p>
               <p className="mt-2">
-                <a href="tel:+34912345678" className="hover:text-accent-foreground transition-colors">
+                <a href="tel:+34912345678" className="hover:text-white transition-colors">
                   +34 912 345 678
                 </a>
               </p>
@@ -101,16 +101,16 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-accent-foreground/20">
+        <div className="mt-16 pt-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-accent-foreground/60 text-sm">
+            <p className="text-white/60 text-sm">
               © {currentYear} Acorde Cervecería. Todos los derechos reservados.
             </p>
             <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-accent-foreground/60 hover:text-accent-foreground transition-colors">
+              <Link href="#" className="text-white/60 hover:text-white transition-colors">
                 Política de privacidad
               </Link>
-              <Link href="#" className="text-accent-foreground/60 hover:text-accent-foreground transition-colors">
+              <Link href="#" className="text-white/60 hover:text-white transition-colors">
                 Aviso legal
               </Link>
             </div>
