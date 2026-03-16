@@ -110,11 +110,11 @@ export function MenuSection() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-[0.06] blur-[2px] saturate-[0.88] md:opacity-[0.11]"
+            className="object-cover object-[center_34%] opacity-[0.12] blur-[1.4px] saturate-[0.92] md:opacity-[0.2] lg:opacity-[0.24]"
           />
         </div>
-        <div className="absolute inset-0 bg-[rgba(247,242,236,0.9)] md:bg-[rgba(247,242,236,0.84)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.65),transparent_54%),linear-gradient(180deg,rgba(255,255,255,0.62),rgba(242,237,231,0.72))]" />
+        <div className="absolute inset-0 bg-[rgba(247,242,236,0.8)] md:bg-[rgba(247,242,236,0.66)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.44),transparent_58%),linear-gradient(180deg,rgba(255,255,255,0.42),rgba(242,237,231,0.5))]" />
       </div>
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-transparent" />
       <div
@@ -175,9 +175,9 @@ export function MenuSection() {
           >
             {menuCategories.map((category) => (
               <AccordionItem key={category.id} value={category.id} className="border-border px-5">
-                <AccordionTrigger className="flex-col items-center justify-center gap-3 py-5 text-center hover:no-underline [&>svg]:mx-auto [&>svg]:translate-y-0">
-                  <div className="flex flex-col items-center text-center">
-                    <span className="block font-serif text-[1.55rem] leading-[0.95] text-foreground sm:text-[1.7rem]">
+                <AccordionTrigger className="relative items-center justify-center py-5 text-center hover:no-underline [&>svg]:absolute [&>svg]:right-0 [&>svg]:top-1/2 [&>svg]:size-5 [&>svg]:-translate-y-1/2 [&>svg]:translate-x-0">
+                  <div className="w-full px-10 text-center">
+                    <span className="block font-serif text-[1.32rem] leading-[1.02] text-foreground sm:text-[1.45rem]">
                       {category.title}
                     </span>
                   </div>
