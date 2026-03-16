@@ -17,7 +17,7 @@ export function Footer() {
             <img
               src="/acorde-logo-principal-transparent.png"
               alt="Acorde Cervecería"
-              className="h-20 w-auto md:h-24"
+              className="h-24 w-auto md:h-28 lg:h-32"
             />
           </Link>
 

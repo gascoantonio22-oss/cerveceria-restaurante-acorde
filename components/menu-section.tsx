@@ -127,12 +127,12 @@ export function MenuSection() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
               La Carta
             </h2>
-            <div className="relative h-14 w-16 shrink-0 opacity-88 md:h-[4.5rem] md:w-20 lg:h-[5.25rem] lg:w-24">
+            <div className="relative h-16 w-[4.5rem] shrink-0 opacity-88 md:h-[5rem] md:w-[5.5rem] lg:h-[5.75rem] lg:w-[6.5rem]">
               <Image
                 src="/gilda-mark.png"
                 alt="Gilda de Acorde"
                 fill
-                sizes="(max-width: 768px) 64px, 96px"
+                sizes="(max-width: 768px) 72px, 104px"
                 className="object-contain"
               />
             </div>
