@@ -55,7 +55,7 @@ export function MenuSection() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            Mural de Azulejos
+            El Mural de Acorde
           </span>
           <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
             La Carta

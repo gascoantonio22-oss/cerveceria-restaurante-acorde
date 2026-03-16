@@ -89,8 +89,8 @@ export function Footer() {
               </a>
             </div>
             <div className="mt-8 text-accent-foreground/80">
-              <p>Calle de Goya, 45</p>
-              <p>28001 Madrid, España</p>
+              <p>C. de Jorge Juan, 104</p>
+              <p>Salamanca, 28009 Madrid</p>
               <p className="mt-2">
                 <a href="tel:+34912345678" className="hover:text-accent-foreground transition-colors">
                   +34 912 345 678

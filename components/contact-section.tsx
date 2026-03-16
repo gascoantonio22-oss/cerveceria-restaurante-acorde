@@ -52,8 +52,8 @@ export function ContactSection() {
                 <div>
                   <h3 className="font-medium text-foreground">Dirección</h3>
                   <p className="mt-1 text-muted-foreground">
-                    Calle de Goya, 45<br />
-                    28001 Madrid, España
+                    C. de Jorge Juan, 104<br />
+                    Salamanca, 28009 Madrid
                   </p>
                 </div>
               </div>
@@ -101,20 +101,18 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Map */}
             <div className="mt-12 aspect-video bg-background rounded-sm overflow-hidden relative border border-border">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop')",
-                }}
+              <iframe
+                title="Mapa de Acorde Cervecería"
+                src="https://www.google.com/maps?q=C.%20de%20Jorge%20Juan%2C%20104%2C%20Salamanca%2C%2028009%20Madrid&z=17&output=embed"
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center">
-                <div className="bg-background/95 backdrop-blur-sm px-8 py-5 rounded-sm text-center border border-border">
-                  <p className="font-serif text-xl text-foreground">Barrio de Goya</p>
-                  <p className="text-sm text-muted-foreground mt-1">Madrid, España</p>
-                </div>
+              <div className="absolute left-4 top-4 bg-background/95 backdrop-blur-sm px-4 py-3 rounded-sm border border-border shadow-sm">
+                <p className="font-serif text-lg text-foreground">C. de Jorge Juan, 104</p>
+                <p className="text-sm text-muted-foreground">Salamanca, 28009 Madrid</p>
               </div>
             </div>
           </div>
