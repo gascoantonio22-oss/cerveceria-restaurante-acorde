@@ -40,19 +40,19 @@ export function ContactSection() {
               </span>
               <div className="h-px w-14 bg-white/18" />
             </div>
-          </div>
 
-          <div className="flex flex-col items-center gap-4 text-center">
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full bg-white px-8 text-black hover:bg-white/92"
-            >
-              <Link href={reservationUrl}>Reservar</Link>
-            </Button>
-            <p className="max-w-md text-sm leading-relaxed text-white/42">
-              Una barra para quedarse un rato y una mesa para alargar la conversación.
-            </p>
+            <div className="mt-10 flex flex-col items-center gap-8 text-center">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 rounded-full border border-white/15 bg-white px-8 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-foreground shadow-[0_14px_34px_rgba(0,0,0,0.26)] transition-all hover:-translate-y-0.5 hover:bg-white/92"
+              >
+                <Link href={reservationUrl}>Reservar</Link>
+              </Button>
+              <p className="max-w-md text-sm leading-relaxed text-white/42">
+                Una barra para quedarse un rato y una mesa para alargar la conversación.
+              </p>
+            </div>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
