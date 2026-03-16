@@ -31,12 +31,12 @@ export function ContactSection() {
               Visítanos
             </h2>
             <p className="mt-5 mx-auto max-w-2xl text-base leading-relaxed text-white/68 md:text-lg">
-              Aquí tienes la dirección, el mapa y la forma más rápida de reservar sin pasar por formulario.
+              Aquí tienes la dirección, el mapa y la forma más rápida de reservar, sin pasar por formularios.
             </p>
             <div className="mt-7 flex items-center justify-center gap-4 text-white/55">
               <div className="h-px w-14 bg-white/18" />
               <span className="font-handwriting text-[1.9rem] leading-none text-white/70">
-                con calma y buena barra
+                Ven con calma y disfruta de una buena barra.
               </span>
               <div className="h-px w-14 bg-white/18" />
             </div>

@@ -101,15 +101,8 @@ const menuCategories: MenuCategory[] = [
 
 export function MenuSection() {
   return (
-    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-4 pb-24 md:pt-12 lg:py-28">
+    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-8 pb-24 md:pt-12 lg:pt-24 lg:pb-28">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background via-[#f7f1ea] to-transparent" />
-      <div className="absolute inset-x-0 top-0 flex justify-center pt-4">
-        <div className="flex items-center gap-3 text-primary/24">
-          <div className="h-px w-12 bg-current" />
-          <div className="h-2.5 w-2.5 rounded-full border border-current bg-current/20" />
-          <div className="h-px w-12 bg-current" />
-        </div>
-      </div>
       <div
         className="absolute inset-0"
         style={{
@@ -122,6 +115,14 @@ export function MenuSection() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
+        <div className="-mt-8 mb-8 flex justify-center md:-mt-10 md:mb-10 lg:-mt-12 lg:mb-12">
+          <div className="flex items-center gap-3 text-primary/22">
+            <div className="h-px w-12 bg-current md:w-16" />
+            <div className="h-2.5 w-2.5 rounded-full border border-current bg-current/20" />
+            <div className="h-px w-12 bg-current md:w-16" />
+          </div>
+        </div>
+
         <div className="text-center mb-10 md:mb-16">
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             El Mural de Acorde

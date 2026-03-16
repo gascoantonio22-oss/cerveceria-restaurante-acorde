@@ -158,11 +158,7 @@ export function GallerySection() {
                   <p className="font-handwriting text-[2rem] leading-none text-white sm:text-[2.3rem]">
                     {selectedImage.label}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/68">{selectedImage.alt}</p>
                 </div>
-                <p className="max-w-sm text-xs uppercase tracking-[0.2em] text-white/45">
-                  {selectedImage.qualityNote ?? "Vista ampliada desde el archivo original disponible en la web."}
-                </p>
               </div>
             </div>
           ) : null}
