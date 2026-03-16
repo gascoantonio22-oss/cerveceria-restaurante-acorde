@@ -5,6 +5,9 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+const reservationUrl =
+  "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -75,7 +78,7 @@ export function Navbar() {
                   : "bg-background text-foreground hover:bg-background/90"
               }`}
             >
-              <Link href="#reservar">Reservar</Link>
+              <Link href={reservationUrl}>Reservar</Link>
             </Button>
           </div>
 
@@ -108,7 +111,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button asChild className="w-full mt-2">
-                <Link href="#reservar" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
                   Reservar
                 </Link>
               </Button>

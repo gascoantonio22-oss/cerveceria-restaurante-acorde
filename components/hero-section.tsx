@@ -2,6 +2,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 
+const reservationUrl =
+  "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -53,7 +56,7 @@ export function HeroSection() {
             size="lg"
             className="bg-background text-foreground hover:bg-background/90 text-base px-8 rounded-sm"
           >
-            <Link href="#reservar">Reservar</Link>
+            <Link href={reservationUrl}>Reservar</Link>
           </Button>
           <Button
             asChild

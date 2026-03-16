@@ -1,6 +1,9 @@
 import Link from "next/link"
 import { Instagram, Facebook } from "lucide-react"
 
+const reservationUrl =
+  "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
+
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -58,7 +61,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#reservar" className="text-white/80 hover:text-white transition-colors">
+                <Link href={reservationUrl} className="text-white/80 hover:text-white transition-colors">
                   Reservar
                 </Link>
               </li>
