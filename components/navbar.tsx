@@ -58,7 +58,7 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <img
-                src="/acorde-logo-no-gilda.png"
+                src={isScrolled ? "/acorde-logo-no-gilda-outline.png" : "/acorde-logo-no-gilda.png"}
                 alt="Acorde Cervecería"
                 loading="eager"
                 fetchPriority="high"
