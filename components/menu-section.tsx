@@ -101,8 +101,8 @@ const menuCategories: MenuCategory[] = [
 
 export function MenuSection() {
   return (
-    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-8 pb-24 md:pt-12 lg:pt-24 lg:pb-28">
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background via-[#f7f1ea] to-transparent" />
+    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-12 pb-24 md:pt-16 lg:pt-24 lg:pb-28">
+      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-transparent" />
       <div
         className="absolute inset-0"
         style={{
@@ -111,18 +111,13 @@ export function MenuSection() {
             linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
+          maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.28) 18%, rgba(0,0,0,1) 34%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.28) 18%, rgba(0,0,0,1) 34%)",
         }}
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
-        <div className="-mt-8 mb-8 flex justify-center md:-mt-10 md:mb-10 lg:-mt-12 lg:mb-12">
-          <div className="flex items-center gap-3 text-primary/22">
-            <div className="h-px w-12 bg-current md:w-16" />
-            <div className="h-2.5 w-2.5 rounded-full border border-current bg-current/20" />
-            <div className="h-px w-12 bg-current md:w-16" />
-          </div>
-        </div>
-
         <div className="text-center mb-10 md:mb-16">
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             El Mural de Acorde

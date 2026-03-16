@@ -42,8 +42,21 @@ export function ContactSection() {
             </div>
           </div>
 
+          <div className="flex flex-col items-center gap-4 text-center">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-white px-8 text-black hover:bg-white/92"
+            >
+              <Link href={reservationUrl}>Reservar</Link>
+            </Button>
+            <p className="max-w-md text-sm leading-relaxed text-white/42">
+              Una barra para quedarse un rato y una mesa para alargar la conversación.
+            </p>
+          </div>
+
           <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-            <div className="order-2 space-y-6 lg:order-1">
+            <div className="order-2 lg:order-1">
               <div className="grid gap-5 rounded-[1.75rem] border border-white/7 bg-white/[0.02] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-sm md:p-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
@@ -113,18 +126,6 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex flex-col items-center gap-4 text-center">
-                <Button
-                  asChild
-                  size="lg"
-                  className="rounded-full bg-white px-8 text-black hover:bg-white/92"
-                >
-                  <Link href={reservationUrl}>Reservar</Link>
-                </Button>
-                <p className="max-w-md text-sm leading-relaxed text-white/42">
-                  Una barra para quedarse un rato y una mesa para alargar la conversación.
-                </p>
-              </div>
             </div>
 
             <div className="order-1 lg:order-2">
