@@ -62,17 +62,8 @@ export function AboutSection() {
           <div className="order-1 lg:order-2 relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border/50">
               <Image
-                src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=2070&auto=format&fit=crop"
-                alt="Interior de Acorde mostrando la barra de mármol y copas colgantes"
-                fill
-                className="object-cover"
-              />
-            </div>
-            {/* Overlapping Image with metallic frame effect */}
-            <div className="absolute -bottom-8 -left-8 w-48 md:w-64 aspect-square overflow-hidden rounded-sm shadow-xl hidden md:block ring-2 ring-secondary/30">
-              <Image
-                src="https://images.unsplash.com/photo-1566633806327-68e152aaf26d?q=80&w=2070&auto=format&fit=crop"
-                alt="Detalle de las botellas de vermut iluminadas"
+                src="/acorde-fachada.jpg"
+                alt="Fachada de Acorde Cerveceria"
                 fill
                 className="object-cover"
               />
