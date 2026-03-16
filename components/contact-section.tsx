@@ -57,12 +57,10 @@ export function ContactSection() {
               >
                 <Link href={reservationUrl}>Reservar</Link>
               </Button>
-              <div className="flex items-center gap-3 text-white/34">
-                <div className="h-px w-12 bg-current/70" />
-                <div className="h-1.5 w-1.5 rounded-full bg-current" />
-                <div className="h-px w-24 bg-current/40" />
-                <div className="h-1.5 w-1.5 rounded-full bg-current" />
-                <div className="h-px w-12 bg-current/70" />
+              <div className="flex w-full max-w-sm items-center justify-center">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/16 to-white/6" />
+                <div className="mx-3 h-px w-10 bg-white/22" />
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent via-white/16 to-white/6" />
               </div>
             </div>
           </div>
