@@ -75,6 +75,19 @@ export function GallerySection() {
     <section id="galeria" className="relative overflow-hidden bg-background pt-14 pb-20 md:py-24 lg:py-32">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f2ede7] via-[#f7f2ec]/84 to-transparent" />
       <div className="absolute inset-x-0 top-[-2.75rem] h-20 bg-[radial-gradient(ellipse_at_center,rgba(242,237,231,0.95),rgba(242,237,231,0.42)_48%,transparent_82%)] blur-2xl" />
+      <div
+        className="absolute inset-0 opacity-[0.38]"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 18% 16%, rgba(188,145,103,0.1), transparent 24%),
+            radial-gradient(circle at 82% 18%, rgba(255,255,255,0.32), transparent 20%),
+            linear-gradient(90deg, rgba(68,44,24,0.045) 1px, transparent 1px),
+            linear-gradient(rgba(68,44,24,0.045) 1px, transparent 1px)
+          `,
+          backgroundSize: "auto, auto, 44px 44px, 44px 44px",
+        }}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,243,0.88),rgba(248,244,238,0.72)_22%,rgba(247,242,236,0.74)_72%,rgba(244,238,231,0.84))]" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/6 to-black/22" />
       <div className="absolute inset-x-0 bottom-4 flex justify-center">
         <div className="flex items-center gap-3 text-black/16">
