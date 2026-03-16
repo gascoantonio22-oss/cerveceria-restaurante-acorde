@@ -113,7 +113,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-col items-center gap-4 text-center">
                 <Button
                   asChild
                   size="lg"
@@ -121,7 +121,7 @@ export function ContactSection() {
                 >
                   <Link href={reservationUrl}>Reservar</Link>
                 </Button>
-                <p className="max-w-sm text-sm leading-relaxed text-white/42">
+                <p className="max-w-md text-sm leading-relaxed text-white/42">
                   Una barra para quedarse un rato y una mesa para alargar la conversación.
                 </p>
               </div>
@@ -146,8 +146,12 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="flex justify-center pt-6 lg:pt-10">
-            <div className="h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+          <div className="flex justify-center pt-8 lg:pt-12">
+            <div className="flex items-center gap-3 text-white/40">
+              <div className="h-px w-16 bg-current/60" />
+              <div className="h-1.5 w-1.5 rounded-full bg-current" />
+              <div className="h-px w-16 bg-current/60" />
+            </div>
           </div>
         </div>
       </div>

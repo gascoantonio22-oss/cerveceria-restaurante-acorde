@@ -11,110 +11,53 @@ export function Footer() {
   return (
     <footer className="relative bg-[#020202] py-16 text-white lg:py-20">
       <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white/[0.04] to-transparent" />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
-          {/* Logo & Description */}
-          <div>
-            <Link href="/" className="inline-block">
-              <img
-                src="/acorde-logo-principal-transparent.png"
-                alt="Acorde Cervecería"
-                className="h-16 w-auto"
-              />
+      <div className="mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center">
+          <Link href="/" className="inline-flex justify-center">
+            <img
+              src="/acorde-logo-principal-transparent.png"
+              alt="Acorde Cervecería"
+              className="h-20 w-auto md:h-24"
+            />
+          </Link>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.72rem] uppercase tracking-[0.2em] text-white/48 md:text-xs">
+            <SectionLink href="#nosotros" className="transition-colors hover:text-white/72">
+              La Cervecería
+            </SectionLink>
+            <SectionLink href="#carta" className="transition-colors hover:text-white/72">
+              Carta
+            </SectionLink>
+            <SectionLink href="#galeria" className="transition-colors hover:text-white/72">
+              Galería
+            </SectionLink>
+            <SectionLink href="#contacto" className="transition-colors hover:text-white/72">
+              Contacto
+            </SectionLink>
+            <Link href={reservationUrl} className="transition-colors hover:text-white/72">
+              Reservar
             </Link>
-            <p className="mt-6 text-white/80 leading-relaxed max-w-xs">
-              El arte del tapeo tradicional en el corazón de Goya. 
-              Donde cada detalle cuenta una historia.
+          </div>
+
+          <a
+            href="https://www.instagram.com/acordecerveceria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/44 transition-colors hover:text-white/75"
+            aria-label="Instagram"
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+
+          <div className="mt-10 w-full border-t border-white/8 pt-6 text-center">
+            <p className="text-xs text-white/34">
+              © {currentYear} Acorde Cervecería. Todos los derechos reservados.
             </p>
-            {/* Mahou badge */}
-            <div className="mt-6 inline-flex items-center gap-2">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-3 h-3 text-amber-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-xs text-white/60 tracking-wider">MAHOU</span>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-medium text-lg mb-6">Enlaces</h4>
-            <ul className="space-y-4">
-              <li>
-                <SectionLink href="#nosotros" className="text-white/80 hover:text-white transition-colors">
-                  La Cervecería
-                </SectionLink>
-              </li>
-              <li>
-                <SectionLink href="#carta" className="text-white/80 hover:text-white transition-colors">
-                  Carta
-                </SectionLink>
-              </li>
-              <li>
-                <SectionLink href="#galeria" className="text-white/80 hover:text-white transition-colors">
-                  Galería
-                </SectionLink>
-              </li>
-              <li>
-                <SectionLink href="#contacto" className="text-white/80 hover:text-white transition-colors">
-                  Contacto
-                </SectionLink>
-              </li>
-              <li>
-                <Link href={reservationUrl} className="text-white/80 hover:text-white transition-colors">
-                  Reservar
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social & Contact */}
-          <div>
-            <h4 className="font-medium text-lg mb-6">Síguenos</h4>
-            <div className="flex gap-4">
-              <a
-                href="https://www.instagram.com/acordecerveceria/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-sm bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
-            <div className="mt-8 text-white/80">
-              <p>C. de Jorge Juan, 104</p>
-              <p>Salamanca, 28009 Madrid</p>
-              <p className="mt-2">
-                <a href="tel:+34914213674" className="hover:text-white transition-colors">
-                  914 21 36 74
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-white/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
-              <img
-                src="/acorde-logo-principal-transparent.png"
-                alt="Acorde Cervecería"
-                className="h-10 w-auto"
-              />
-              <p className="text-white/60 text-sm">
-                © {currentYear} Acorde Cervecería. Todos los derechos reservados.
-              </p>
-            </div>
-            <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-white/60 hover:text-white transition-colors">
-                Política de privacidad
+            <div className="mt-3 flex justify-center gap-5 text-[0.68rem] uppercase tracking-[0.18em] text-white/28 md:text-[0.72rem]">
+              <Link href="#" className="transition-colors hover:text-white/55">
+                Privacidad
               </Link>
-              <Link href="#" className="text-white/60 hover:text-white transition-colors">
+              <Link href="#" className="transition-colors hover:text-white/55">
                 Aviso legal
               </Link>
             </div>
