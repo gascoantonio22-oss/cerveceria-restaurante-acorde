@@ -110,26 +110,13 @@ export function MenuSection() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-[center_34%] opacity-[0.24] blur-[0.8px] brightness-[1.04] contrast-[0.96] saturate-[0.82] md:opacity-[0.34] lg:opacity-[0.4]"
+            className="object-cover object-[center_38%] opacity-[0.22] blur-[0.7px] brightness-[1.03] contrast-[0.96] saturate-[0.82] md:opacity-[0.3] lg:opacity-[0.34]"
           />
         </div>
         <div className="absolute inset-0 bg-[rgba(248,244,238,0.62)] md:bg-[rgba(248,244,238,0.48)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.36),transparent_58%),linear-gradient(180deg,rgba(255,255,255,0.2),rgba(242,237,231,0.3))]" />
       </div>
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-transparent" />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(90deg, rgba(0,0,0,0.018) 1px, transparent 1px),
-            linear-gradient(rgba(0,0,0,0.018) 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px",
-          maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.28) 18%, rgba(0,0,0,1) 34%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.28) 18%, rgba(0,0,0,1) 34%)",
-        }}
-      />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-16">
