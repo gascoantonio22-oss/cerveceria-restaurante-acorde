@@ -23,7 +23,7 @@ export function HeroSection() {
         {/* Logo */}
         <div className="mb-8">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Invierte_los_colores_loq_ue_ahora_es_negro_que_sea_delpmaspu-removebg-preview-yAcz0kgjC9QQdYvN3RGWtfaMzj9BYR.png"
+            src="/acorde-logo-principal.png"
             alt="Acorde Cervecería"
             className="h-48 md:h-72 lg:h-80 w-auto mx-auto"
           />

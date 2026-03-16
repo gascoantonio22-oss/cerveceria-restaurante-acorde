@@ -37,11 +37,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Proyecto%20nuevo-2Y1qcL3wIVwYOKBftAfPxSaGWbFQ3V.png"
+              src="/acorde-logo-principal.png"
               alt="Acorde Cervecería"
-              className={`h-14 w-auto transition-all ${
-                isScrolled ? "brightness-100" : "brightness-0 invert"
-              }`}
+              className="h-14 w-auto transition-all"
             />
           </Link>
 
