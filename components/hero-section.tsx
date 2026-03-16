@@ -7,25 +7,25 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image - Draft beer on marble counter */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-[center_35%] md:bg-center bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/La_barra_que_sea_de_marmol_blancpo_no_madera_y_que_delpmaspu.png-tpGThbtnIPDAsAkusMwlWDfrMiLk5O.jpeg')",
         }}
       >
         {/* Semi-transparent dark overlay for logo prominence */}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-black/60 md:bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/70 md:from-black/70 md:via-transparent md:to-black/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <img
             src="/acorde-logo-principal.png"
             alt="Acorde Cervecería"
-            className="h-48 md:h-72 lg:h-80 w-auto mx-auto"
+            className="h-32 sm:h-40 md:h-72 lg:h-80 max-w-[84vw] sm:max-w-[78vw] md:max-w-none w-auto mx-auto"
           />
         </div>
 
