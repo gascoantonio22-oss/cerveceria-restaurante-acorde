@@ -126,44 +126,40 @@ export function Navbar() {
             aria-label="Cerrar menú"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="absolute right-4 top-[5.55rem] z-50 w-[min(18rem,calc(100vw-2rem))] origin-top-right overflow-hidden rounded-[2rem] border border-white/10 bg-[#120f0d]/92 p-3 shadow-[0_28px_80px_rgba(0,0,0,0.42)] ring-1 ring-[#b78f72]/12 backdrop-blur-xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
+          <div className="absolute right-4 top-[5.55rem] z-50 w-[min(17rem,calc(100vw-2.2rem))] origin-top-right overflow-hidden rounded-[2rem] border border-white/10 bg-[#17120f]/90 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.4)] ring-1 ring-white/5 backdrop-blur-xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
             <div
               className="pointer-events-none absolute inset-0 opacity-70"
               style={{
                 background:
-                  "radial-gradient(circle at top right, rgba(145,60,47,0.28) 0%, transparent 34%), linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 28%)",
+                  "radial-gradient(circle at top right, rgba(124,48,37,0.18) 0%, transparent 36%), linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0) 32%)",
               }}
             />
 
-            <div className="relative flex flex-col gap-1">
-              <div className="mb-1 px-3 pt-2">
-                <span className="text-[0.68rem] font-medium uppercase tracking-[0.34em] text-[#c9b6a4]/68">
-                  Navegación
-                </span>
-              </div>
+            <div className="relative flex flex-col gap-1 px-1 pt-1">
               {navLinks.map((link) => (
                 <SectionLink
                   key={link.href}
                   href={link.href}
-                  className="rounded-[1.1rem] border border-transparent px-4 py-3 text-[1.05rem] font-medium text-[#f4ede4] transition-all hover:border-white/8 hover:bg-white/[0.04]"
+                  className="group flex items-center justify-between rounded-[1.15rem] px-4 py-3.5 text-[#f5ede2] transition-all hover:bg-white/[0.04]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  <span className="font-serif text-[1.05rem]">{link.label}</span>
+                  <span className="h-px w-7 bg-white/10 transition-all group-hover:w-9 group-hover:bg-[#b98b72]/60" />
                 </SectionLink>
               ))}
             </div>
 
-            <div className="relative mt-3 border-t border-white/10 pt-3">
+            <div className="relative mt-2 border-t border-white/8 pt-3">
               <a
                 href={phoneHref}
-                className="flex items-center justify-between rounded-[1.1rem] px-4 py-3 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-[#c9b6a4] transition-all hover:bg-white/[0.04] hover:text-[#f4ede4]"
+                className="flex items-center justify-between rounded-[1.1rem] px-4 py-3 text-[0.68rem] font-medium uppercase tracking-[0.3em] text-[#c7b3a0] transition-all hover:bg-white/[0.04] hover:text-[#f4ede4]"
               >
                 <span>Llamar</span>
-                <span className="text-base tracking-[0.22em] text-[#f4ede4]">{phoneNumber}</span>
+                <span className="text-[1.05rem] tracking-[0.18em] text-[#f4ede4]">{phoneNumber}</span>
               </a>
               <Button
                 asChild
-                className="mt-1 h-12 w-full rounded-full border border-[#8b4134]/40 bg-[#7b3126] text-[#fff8f3] shadow-[0_12px_30px_rgba(73,20,14,0.34)] transition-all hover:bg-[#8a3a2d]"
+                className="mt-1 h-11 w-full rounded-full border border-[#8b4134]/30 bg-[#7a3126]/92 text-[#fff8f3] shadow-[0_10px_28px_rgba(73,20,14,0.28)] transition-all hover:bg-[#8a3a2d]"
               >
                 <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
                   Reservar
