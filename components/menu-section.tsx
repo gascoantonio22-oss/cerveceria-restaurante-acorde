@@ -120,19 +120,19 @@ export function MenuSection() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
         <div className="text-center mb-10 md:mb-16">
-          <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          <span className="block text-sm font-medium uppercase tracking-widest text-muted-foreground">
             El Mural de Acorde
           </span>
-          <div className="relative mt-4 inline-block pr-[4.4rem] md:pr-[5.1rem] lg:pr-[5.8rem]">
+          <div className="mt-4 flex items-center justify-center gap-2 md:gap-2.5">
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
               La Carta
             </h2>
-            <div className="absolute left-full top-1/2 ml-1.5 h-[4rem] w-[4rem] -translate-y-[46%] opacity-88 md:ml-2 md:h-[4.6rem] md:w-[4.6rem] lg:h-[5.1rem] lg:w-[5.1rem]">
+            <div className="relative mt-1 h-[2.8rem] w-[2.8rem] shrink-0 opacity-85 md:h-[3.25rem] md:w-[3.25rem] lg:h-[3.6rem] lg:w-[3.6rem]">
               <Image
                 src="/gilda-mark.png"
                 alt="Gilda de Acorde"
                 fill
-                sizes="(max-width: 768px) 64px, 82px"
+                sizes="(max-width: 768px) 44px, 58px"
                 className="object-contain"
               />
             </div>
