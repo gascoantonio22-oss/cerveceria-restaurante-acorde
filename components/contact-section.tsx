@@ -57,9 +57,13 @@ export function ContactSection() {
               >
                 <Link href={reservationUrl}>Reservar</Link>
               </Button>
-              <p className="max-w-md text-sm leading-relaxed text-white/42">
-                Una barra para quedarse un rato y una mesa para alargar la conversación.
-              </p>
+              <div className="flex items-center gap-3 text-white/34">
+                <div className="h-px w-12 bg-current/70" />
+                <div className="h-1.5 w-1.5 rounded-full bg-current" />
+                <div className="h-px w-24 bg-current/40" />
+                <div className="h-1.5 w-1.5 rounded-full bg-current" />
+                <div className="h-px w-12 bg-current/70" />
+              </div>
             </div>
           </div>
 
