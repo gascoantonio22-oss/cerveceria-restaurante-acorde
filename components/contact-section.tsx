@@ -7,7 +7,7 @@ const reservationUrl =
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-32">
+    <section id="contacto" className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-28">
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#fbf8f3] via-[#b08c72]/10 to-transparent" />
       <div
         className="absolute inset-0"
@@ -22,7 +22,7 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(178,127,86,0.18),transparent_26%),radial-gradient(circle_at_78%_16%,rgba(255,255,255,0.07),transparent_20%),linear-gradient(to_bottom,rgba(0,0,0,0.82),rgba(0,0,0,0.96))]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
-        <div className="space-y-14">
+        <div className="space-y-12">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">
               Jorge Juan, Madrid
@@ -30,7 +30,7 @@ export function ContactSection() {
             <h2 className="mt-4 font-serif text-4xl text-white md:text-5xl lg:text-6xl font-medium">
               Visítanos
             </h2>
-            <p className="mt-5 max-w-2xl mx-auto text-lg text-white/72 leading-relaxed">
+            <p className="mt-5 mx-auto max-w-2xl text-base leading-relaxed text-white/68 md:text-lg">
               Aquí tienes la dirección, el mapa y la forma más rápida de reservar sin pasar por formulario.
             </p>
             <div className="mt-7 flex items-center justify-center gap-4 text-white/55">
@@ -42,19 +42,19 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-            <div className="order-2 space-y-8 lg:order-1">
-              <div className="grid gap-6 rounded-[2rem] border border-white/8 bg-white/[0.02] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.24)] backdrop-blur-sm md:p-8">
+          <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+            <div className="order-2 space-y-6 lg:order-1">
+              <div className="grid gap-5 rounded-[1.75rem] border border-white/7 bg-white/[0.02] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-sm md:p-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
-                    <MapPin className="h-4 w-4 text-white/82" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                    <MapPin className="h-3.5 w-3.5 text-white/82" />
                   </div>
                   <div>
                     <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Dirección</p>
-                    <p className="mt-2 text-2xl font-serif leading-tight text-white md:text-[2rem]">
+                    <p className="mt-2 font-serif text-xl leading-tight text-white md:text-[1.55rem]">
                       C. de Jorge Juan, 104
                     </p>
-                    <p className="mt-2 text-base leading-relaxed text-white/65">
+                    <p className="mt-2 text-sm leading-relaxed text-white/62 md:text-base">
                       Salamanca, 28009 Madrid
                     </p>
                   </div>
@@ -64,12 +64,12 @@ export function ContactSection() {
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
-                      <Clock className="h-4 w-4 text-white/82" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                      <Clock className="h-3.5 w-3.5 text-white/82" />
                     </div>
                     <div>
                       <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Horarios</p>
-                      <p className="mt-2 text-base leading-relaxed text-white/68">
+                      <p className="mt-2 text-sm leading-relaxed text-white/64 md:text-[0.95rem]">
                         Lunes: Cerrado
                         <br />
                         Martes: Cerrado
@@ -83,12 +83,12 @@ export function ContactSection() {
 
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
-                        <Phone className="h-4 w-4 text-white/82" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                        <Phone className="h-3.5 w-3.5 text-white/82" />
                       </div>
                       <div>
                         <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Teléfono</p>
-                        <p className="mt-2 text-base leading-relaxed text-white/68">
+                        <p className="mt-2 text-sm leading-relaxed text-white/64 md:text-[0.95rem]">
                           <a href="tel:+34914213674" className="transition-colors hover:text-white">
                             914 21 36 74
                           </a>
@@ -97,12 +97,12 @@ export function ContactSection() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
-                        <Mail className="h-4 w-4 text-white/82" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                        <Mail className="h-3.5 w-3.5 text-white/82" />
                       </div>
                       <div>
                         <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Email</p>
-                        <p className="mt-2 text-base leading-relaxed text-white/68">
+                        <p className="mt-2 text-sm leading-relaxed text-white/64 md:text-[0.95rem]">
                           <a href="mailto:hola@acorde.es" className="transition-colors hover:text-white">
                             hola@acorde.es
                           </a>
@@ -121,6 +121,9 @@ export function ContactSection() {
                 >
                   <Link href={reservationUrl}>Reservar</Link>
                 </Button>
+                <p className="max-w-sm text-sm leading-relaxed text-white/42">
+                  Una barra para quedarse un rato y una mesa para alargar la conversación.
+                </p>
               </div>
             </div>
 
@@ -138,13 +141,13 @@ export function ContactSection() {
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                  <div className="absolute left-5 top-5 max-w-[16rem] rounded-[1.2rem] border border-white/12 bg-black/72 px-5 py-4 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.28)]">
-                    <p className="font-serif text-2xl leading-none text-white">C. de Jorge Juan, 104</p>
-                    <p className="mt-2 text-sm text-white/65">Salamanca, 28009 Madrid</p>
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-center pt-6 lg:pt-10">
+            <div className="h-px w-full max-w-5xl bg-gradient-to-r from-transparent via-white/12 to-transparent" />
           </div>
         </div>
       </div>

@@ -9,7 +9,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-black text-white py-16 lg:py-20">
+    <footer className="relative bg-[#020202] py-16 text-white lg:py-20">
+      <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-white/[0.04] to-transparent" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
           {/* Logo & Description */}

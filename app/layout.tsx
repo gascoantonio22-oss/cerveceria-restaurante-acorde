@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter, Caveat } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
@@ -51,9 +50,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${playfair.variable} ${inter.variable} ${caveat.variable}`}>
+      <head>
+        <link rel="preload" as="image" href="/acorde-logo-principal-transparent.png" />
+        <link rel="preload" as="image" href="/acorde-logo-completo.png" />
+        <link rel="preload" as="image" href="/acorde-fachada-hola.png" />
+      </head>
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
       </body>
     </html>
   )

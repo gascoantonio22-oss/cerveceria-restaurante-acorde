@@ -56,6 +56,8 @@ export function Navbar() {
                   : "/acorde-logo-principal-transparent.png"
               }
               alt="Acorde Cervecería"
+              loading="eager"
+              fetchPriority="high"
               className={`h-[3.35rem] md:h-14 lg:h-16 w-auto origin-left transition-all duration-300 ${
                 isScrolled ? "scale-[1.08]" : "scale-100"
               }`}

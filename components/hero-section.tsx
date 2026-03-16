@@ -52,11 +52,15 @@ export function HeroSection() {
           <img
             src="/acorde-logo-principal-transparent.png"
             alt="Acorde Cervecería"
+            loading="eager"
+            fetchPriority="high"
             className="h-40 sm:h-48 md:hidden max-w-[90vw] sm:max-w-[84vw] w-auto mx-auto"
           />
           <img
             src="/acorde-logo-principal-transparent.png"
             alt="Acorde Cervecería"
+            loading="eager"
+            fetchPriority="high"
             className="hidden md:block md:h-72 lg:h-80 w-auto mx-auto"
           />
         </div>

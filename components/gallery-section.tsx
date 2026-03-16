@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Expand, X } from "lucide-react"
+import { X } from "lucide-react"
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 
 type GalleryImage = {
@@ -117,13 +117,10 @@ export function GallerySection() {
                 className={`${image.fit === "contain" ? "object-contain p-2 md:p-3" : "object-cover"} transition-transform duration-700 group-hover:scale-[1.03]`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 text-white">
+              <div className="absolute inset-x-0 bottom-0 p-4 text-white">
                 <div>
                   <p className="font-handwriting text-2xl leading-none md:text-[2rem]">{image.label}</p>
                 </div>
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur-sm">
-                  <Expand className="h-4 w-4" />
-                </span>
               </div>
             </button>
           ))}
