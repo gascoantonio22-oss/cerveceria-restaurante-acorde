@@ -70,11 +70,13 @@ export function ContactSection() {
                     <div>
                       <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Horarios</p>
                       <p className="mt-2 text-base leading-relaxed text-white/68">
-                        Lunes a Jueves: 12:00 - 00:00
+                        Lunes: Cerrado
                         <br />
-                        Viernes y Sábado: 12:00 - 01:00
+                        Martes: Cerrado
                         <br />
-                        Domingo: 12:00 - 23:00
+                        Miércoles a Sábado: 13:00 - 23:30
+                        <br />
+                        Domingo: 13:00 - 16:30
                       </p>
                     </div>
                   </div>
@@ -119,9 +121,6 @@ export function ContactSection() {
                 >
                   <Link href={reservationUrl}>Reservar</Link>
                 </Button>
-                <p className="text-sm leading-relaxed text-white/48">
-                  Una barra para quedarse un rato y una mesa para alargar la conversación.
-                </p>
               </div>
             </div>
 

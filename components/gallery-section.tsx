@@ -120,7 +120,6 @@ export function GallerySection() {
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 text-white">
                 <div>
                   <p className="font-handwriting text-2xl leading-none md:text-[2rem]">{image.label}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/68">Toca para ampliar</p>
                 </div>
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur-sm">
                   <Expand className="h-4 w-4" />

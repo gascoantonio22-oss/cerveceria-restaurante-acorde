@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram, Facebook } from "lucide-react"
+import { Instagram } from "lucide-react"
 import { SectionLink } from "@/components/section-link"
 
 const reservationUrl =
@@ -75,22 +75,13 @@ export function Footer() {
             <h4 className="font-medium text-lg mb-6">Síguenos</h4>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/acordecerveceria/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-sm bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-sm bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
               </a>
             </div>
             <div className="mt-8 text-white/80">
