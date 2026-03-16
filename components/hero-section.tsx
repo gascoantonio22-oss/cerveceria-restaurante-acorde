@@ -14,6 +14,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black/68" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/76 via-black/52 to-black/78" />
       </div>
+      <div className="absolute inset-x-0 bottom-0 z-[1] h-24 md:hidden bg-gradient-to-b from-transparent via-[#f6f1eb]/22 to-[#fbf8f3]/72" />
+      <div className="absolute inset-x-0 -bottom-12 z-[1] h-28 md:hidden bg-[radial-gradient(ellipse_at_center,rgba(255,249,243,0.92),rgba(255,249,243,0.42)_48%,transparent_76%)] blur-2xl" />
 
       <div className="absolute inset-0 hidden md:block">
         <div
@@ -87,7 +89,7 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="bg-background text-foreground hover:bg-background/90 text-base px-8 rounded-sm"
+            className="h-12 rounded-full border border-white/15 bg-white px-8 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-foreground shadow-[0_14px_34px_rgba(0,0,0,0.26)] transition-all hover:-translate-y-0.5 hover:bg-white/92"
           >
             <SectionLink href="#carta">Explorar la carta</SectionLink>
           </Button>
@@ -95,7 +97,7 @@ export function HeroSection() {
             asChild
             variant="outline"
             size="lg"
-            className="border-2 border-background/60 text-background hover:bg-background/10 text-base px-8 rounded-sm bg-transparent"
+            className="h-12 rounded-full border border-white/30 bg-white/[0.04] px-8 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/[0.08]"
           >
             <SectionLink href="#contacto">Dónde estamos</SectionLink>
           </Button>
