@@ -158,7 +158,7 @@ export function MenuSection() {
             type="single"
             collapsible
             defaultValue="conservas"
-            className="rounded-[1.5rem] border border-border/80 bg-card/90 shadow-[0_24px_50px_rgba(0,0,0,0.07)] backdrop-blur-sm"
+            className="mx-auto max-w-3xl rounded-[1.5rem] border border-border/80 bg-card/90 shadow-[0_24px_50px_rgba(0,0,0,0.07)] backdrop-blur-sm"
           >
             {menuCategories.map((category) => (
               <AccordionItem key={category.id} value={category.id} className="border-border px-5">
@@ -198,9 +198,9 @@ export function MenuSection() {
           </Accordion>
         </div>
 
-        <Tabs defaultValue="conservas" className="hidden gap-6 md:flex">
-          <div className="overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <TabsList className="min-w-max h-auto gap-1 rounded-full bg-foreground/[0.04] p-1">
+        <Tabs defaultValue="conservas" className="hidden gap-6 md:flex md:flex-col md:items-center">
+          <div className="flex w-full justify-center overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <TabsList className="mx-auto min-w-max h-auto gap-1 rounded-full bg-foreground/[0.04] p-1">
               {menuCategories.map((category) => (
                 <TabsTrigger
                   key={category.id}
@@ -214,7 +214,7 @@ export function MenuSection() {
           </div>
 
           {menuCategories.map((category) => (
-            <TabsContent key={category.id} value={category.id}>
+            <TabsContent key={category.id} value={category.id} className="w-full max-w-[61rem]">
               <div className="rounded-[2rem] border border-border/80 bg-card/92 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:p-10">
                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                   <div>

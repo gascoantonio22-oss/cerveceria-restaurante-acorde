@@ -119,52 +119,36 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden">
+        <div className="fixed inset-0 z-[60] md:hidden">
           <button
             type="button"
-            className="fixed inset-0 top-20 z-40 bg-black/40 backdrop-blur-[3px]"
+            className="absolute inset-0 bg-black/38 backdrop-blur-[2px]"
             aria-label="Cerrar menú"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="absolute right-4 top-[5.55rem] z-50 w-[min(17rem,calc(100vw-2.2rem))] origin-top-right overflow-hidden rounded-[2rem] border border-white/10 bg-[#17120f]/90 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.4)] ring-1 ring-white/5 backdrop-blur-xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-70"
-              style={{
-                background:
-                  "radial-gradient(circle at top right, rgba(124,48,37,0.18) 0%, transparent 36%), linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0) 32%)",
-              }}
-            />
-
-            <div className="relative flex flex-col gap-1 px-1 pt-1">
-              {navLinks.map((link) => (
-                <SectionLink
-                  key={link.href}
-                  href={link.href}
-                  className="group flex items-center justify-between rounded-[1.15rem] px-4 py-3.5 text-[#f5ede2] transition-all hover:bg-white/[0.04]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span className="font-serif text-[1.05rem]">{link.label}</span>
-                  <span className="h-px w-7 bg-white/10 transition-all group-hover:w-9 group-hover:bg-[#b98b72]/60" />
-                </SectionLink>
-              ))}
-            </div>
-
-            <div className="relative mt-2 border-t border-white/8 pt-3">
-              <a
-                href={phoneHref}
-                className="flex items-center justify-between rounded-[1.1rem] px-4 py-3 text-[0.68rem] font-medium uppercase tracking-[0.3em] text-[#c7b3a0] transition-all hover:bg-white/[0.04] hover:text-[#f4ede4]"
+          <div className="absolute inset-y-0 right-0 w-[min(82vw,24rem)] bg-black/98 shadow-[-24px_0_80px_rgba(0,0,0,0.38)] animate-in slide-in-from-right-8 fade-in duration-300">
+            <div className="flex h-full flex-col px-8 pb-10 pt-24">
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Cerrar menú"
+                className="absolute right-6 top-14 flex h-14 w-14 items-center justify-center rounded-full border border-white/70 text-white transition-colors hover:bg-white/8"
               >
-                <span>Llamar</span>
-                <span className="text-[1.05rem] tracking-[0.18em] text-[#f4ede4]">{phoneNumber}</span>
-              </a>
-              <Button
-                asChild
-                className="mt-1 h-11 w-full rounded-full border border-[#8b4134]/30 bg-[#7a3126]/92 text-[#fff8f3] shadow-[0_10px_28px_rgba(73,20,14,0.28)] transition-all hover:bg-[#8a3a2d]"
-              >
-                <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
-                  Reservar
-                </Link>
-              </Button>
+                <X className="h-7 w-7" />
+              </button>
+
+              <div className="flex flex-1 flex-col justify-center gap-9">
+                {navLinks.map((link) => (
+                  <SectionLink
+                    key={link.href}
+                    href={link.href}
+                    className="text-[2.55rem] font-light tracking-[-0.04em] text-white transition-opacity duration-200 hover:opacity-72"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </SectionLink>
+                ))}
+              </div>
             </div>
           </div>
         </div>
