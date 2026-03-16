@@ -100,8 +100,7 @@ export function GallerySection() {
             Galería
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Un recorrido por la carta, la fachada, la barra y el comedor. Puedes abrir cada imagen y
-            verla a mayor tamaño cuando quieras detenerte en un detalle.
+            Un recorrido por la carta, la fachada, la barra y el comedor.
           </p>
         </div>
 

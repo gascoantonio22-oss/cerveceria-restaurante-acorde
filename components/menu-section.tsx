@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -122,9 +123,20 @@ export function MenuSection() {
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             El Mural de Acorde
           </span>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
-            La Carta
-          </h2>
+          <div className="mt-4 flex items-center justify-center gap-3 md:gap-5">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
+              La Carta
+            </h2>
+            <div className="relative h-14 w-16 shrink-0 opacity-88 md:h-[4.5rem] md:w-20 lg:h-[5.25rem] lg:w-24">
+              <Image
+                src="/gilda-mark.png"
+                alt="Gilda de Acorde"
+                fill
+                sizes="(max-width: 768px) 64px, 96px"
+                className="object-contain"
+              />
+            </div>
+          </div>
           <div className="mt-6 max-w-4xl mx-auto space-y-4 text-lg text-muted-foreground leading-relaxed">
             <p>
               Una carta pensada para el tapeo y para compartir: conservas y salazones de barra,
