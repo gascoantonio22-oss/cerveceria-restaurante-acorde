@@ -14,10 +14,6 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-black/68" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/76 via-black/52 to-black/78" />
       </div>
-      <div className="absolute inset-x-0 bottom-0 z-[1] h-16 md:hidden bg-gradient-to-b from-transparent via-[#f7f2ec]/18 to-[#fbf8f3]" />
-      <div className="absolute inset-x-0 bottom-4 z-[2] flex justify-center md:hidden">
-        <div className="h-px w-20 bg-white/14" />
-      </div>
 
       <div className="absolute inset-0 hidden md:block">
         <div

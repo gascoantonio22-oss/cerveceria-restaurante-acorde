@@ -14,8 +14,10 @@ function GildaIllustration({ className }: { className?: string }) {
 
 export function AboutSection() {
   return (
-    <section id="nosotros" className="relative overflow-hidden bg-background pt-24 pb-12 md:pb-16 lg:py-32">
-      <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#fbf8f3] via-[#fbf8f3]/92 to-transparent md:hidden" />
+    <section id="nosotros" className="relative overflow-hidden bg-background pt-8 pb-12 md:pt-24 md:pb-16 lg:py-32">
+      <div className="absolute inset-x-0 top-4 flex justify-center md:hidden">
+        <div className="h-px w-16 bg-border/55" />
+      </div>
       <div className="absolute inset-x-0 -top-10 hidden h-24 bg-[radial-gradient(ellipse_at_top,rgba(0,0,0,0.28),transparent_70%)] blur-2xl md:block" />
       <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/10 via-black/[0.03] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent via-[#f7f2ec]/72 to-[#f2ede7]" />
