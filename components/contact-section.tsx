@@ -8,7 +8,15 @@ const reservationUrl =
 export function ContactSection() {
   return (
     <section id="contacto" className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-28">
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#fbf8f3] via-[#b08c72]/10 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fbf8f3] via-[#7d6858]/10 to-transparent" />
+      <div className="absolute left-1/2 top-0 h-24 w-60 -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),transparent_70%)] blur-3xl motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 motion-safe:duration-700" />
+      <div className="absolute inset-x-0 top-5 flex justify-center">
+        <div className="flex items-center gap-3 text-white/22">
+          <div className="h-px w-10 bg-current" />
+          <div className="h-1.5 w-1.5 rounded-full bg-current" />
+          <div className="h-px w-10 bg-current" />
+        </div>
+      </div>
       <div
         className="absolute inset-0"
         style={{

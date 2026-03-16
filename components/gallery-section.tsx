@@ -72,9 +72,16 @@ export function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
 
   return (
-    <section id="galeria" className="relative overflow-hidden bg-[#fbf8f3] py-24 lg:py-32">
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f2ede7] via-[#f7f3ee] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black/10" />
+    <section id="galeria" className="relative overflow-hidden bg-[#fbf8f3] pt-14 pb-20 md:py-24 lg:py-32">
+      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f2ede7] via-[#f8f5f0] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/6 to-black/22" />
+      <div className="absolute inset-x-0 bottom-4 flex justify-center">
+        <div className="flex items-center gap-3 text-black/16">
+          <div className="h-px w-12 bg-current" />
+          <div className="h-1.5 w-1.5 rounded-full bg-current" />
+          <div className="h-px w-12 bg-current" />
+        </div>
+      </div>
       <div
         className="absolute inset-0"
         style={{

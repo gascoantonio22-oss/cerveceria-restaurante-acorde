@@ -101,7 +101,7 @@ const menuCategories: MenuCategory[] = [
 
 export function MenuSection() {
   return (
-    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-12 pb-24 md:pt-16 lg:pt-24 lg:pb-28">
+    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-12 pb-14 md:pt-16 md:pb-24 lg:pt-24 lg:pb-28">
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-transparent" />
       <div
         className="absolute inset-0"
@@ -236,6 +236,14 @@ export function MenuSection() {
             </TabsContent>
           ))}
         </Tabs>
+
+        <div className="mt-10 flex justify-center md:hidden">
+          <div className="flex items-center gap-3 text-primary/22">
+            <div className="h-px w-10 bg-current" />
+            <div className="h-1.5 w-1.5 rounded-full bg-current" />
+            <div className="h-px w-10 bg-current" />
+          </div>
+        </div>
       </div>
     </section>
   )
