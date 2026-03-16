@@ -91,7 +91,7 @@ export function GallerySection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-14 text-center">
           <span className="text-sm font-medium uppercase tracking-[0.24em] text-muted-foreground">
             Arte y Atmósfera

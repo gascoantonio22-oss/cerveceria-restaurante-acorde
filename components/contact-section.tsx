@@ -9,7 +9,7 @@ export function ContactSection() {
   return (
     <section id="contacto" className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-28">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fbf8f3] via-[#7d6858]/10 to-transparent" />
-      <div className="absolute left-1/2 top-0 h-24 w-60 -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),transparent_70%)] blur-3xl motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 motion-safe:duration-700" />
+      <div className="absolute left-1/2 top-0 h-24 w-60 -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),transparent_70%)] blur-3xl" />
       <div className="absolute inset-x-0 top-5 flex justify-center">
         <div className="flex items-center gap-3 text-white/22">
           <div className="h-px w-10 bg-current" />
@@ -29,7 +29,7 @@ export function ContactSection() {
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(178,127,86,0.18),transparent_26%),radial-gradient(circle_at_78%_16%,rgba(255,255,255,0.07),transparent_20%),linear-gradient(to_bottom,rgba(0,0,0,0.82),rgba(0,0,0,0.96))]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="space-y-12">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">
