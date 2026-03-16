@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import { SectionLink } from "@/components/section-link"
 
+const reservationUrl =
+  "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -89,7 +92,7 @@ export function HeroSection() {
             size="lg"
             className="h-12 rounded-full border border-white/15 bg-white px-8 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-foreground shadow-[0_14px_34px_rgba(0,0,0,0.26)] transition-all hover:-translate-y-0.5 hover:bg-white/92"
           >
-            <SectionLink href="#carta">Explorar la carta</SectionLink>
+            <a href={reservationUrl}>Reservar</a>
           </Button>
           <Button
             asChild
