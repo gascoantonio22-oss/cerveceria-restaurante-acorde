@@ -53,7 +53,7 @@ export function HeroSection() {
             size="lg"
             className="bg-background text-foreground hover:bg-background/90 text-base px-8 rounded-sm"
           >
-            <Link href="#carta">Explora la Carta</Link>
+            <Link href="#reservar">Reservar</Link>
           </Button>
           <Button
             asChild
@@ -61,7 +61,7 @@ export function HeroSection() {
             size="lg"
             className="border-2 border-background/60 text-background hover:bg-background/10 text-base px-8 rounded-sm bg-transparent"
           >
-            <Link href="#nosotros">Nuestra Historia</Link>
+            <Link href="#carta">Explorar la carta</Link>
           </Button>
         </div>
       </div>

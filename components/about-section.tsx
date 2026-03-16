@@ -53,7 +53,7 @@ export function AboutSection() {
             {/* Decorative line with steel accent */}
             <div className="mt-10 flex items-center gap-4">
               <div className="h-px flex-1 bg-gradient-to-r from-border via-secondary to-border" />
-              <span className="font-handwriting text-2xl text-primary">desde 2024</span>
+              <span className="font-handwriting text-2xl text-primary">tirando cañas desde toda la vida</span>
               <div className="h-px flex-1 bg-gradient-to-r from-border via-secondary to-border" />
             </div>
           </div>
