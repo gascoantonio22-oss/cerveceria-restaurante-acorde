@@ -25,26 +25,28 @@ export function AboutSection() {
           {/* Text Content */}
           <div className="order-2 lg:order-1">
             <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              Nuestra Esencia
+              Nuestra esencia
             </span>
             <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight text-balance">
               Tradición madrileña con alma artística
             </h2>
             <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Acorde nació de la pasión por recuperar la esencia de las cervecerías clásicas madrileñas, 
-                esos lugares donde el tiempo parece detenerse entre conversaciones y el sonido de las cañas 
-                al servirse.
+                En Acorde nos gusta lo de siempre: una buena caña, una barra donde apoyarse y algo rico
+                para compartir. Nacimos con la idea de recuperar el espíritu de las cervecerías
+                madrileñas de toda la vida, esos sitios donde el plan era sencillo: quedar, picar algo y
+                dejar que la conversación se alargue.
               </p>
               <p>
-                Nuestra barra de mármol blanco, las copas de cristal suspendidas y el mural pintado a mano 
-                sobre azulejos blancos cuentan la historia de un Madrid que fusiona lo tradicional con lo 
-                contemporáneo. Cada ilustración del mural — la gilda, los boquerones, las conservas — es 
-                un homenaje al arte del tapeo.
+                La barra de mármol, la madera del comedor y las copas de cristal colgadas forman parte de
+                ese ambiente clásico. Pero también hay un pequeño guiño artístico: un mural pintado a mano
+                sobre azulejos blancos donde aparecen algunos de los grandes protagonistas del tapeo, la
+                gilda, los boquerones y las conservas, como si fueran pequeñas piezas de arte cotidiano.
               </p>
               <p>
-                Las botellas de vermut retro-iluminadas y el aroma del jamón recién cortado crean ese 
-                ambiente acogedor que invita a quedarse, a compartir, a disfrutar.
+                Las botellas de vermut iluminadas, el jamón recién cortado y el sonido de las cañas al
+                servirse hacen el resto. Un lugar para venir sin prisa, compartir unas tapas y disfrutar
+                de ese Madrid que mezcla tradición, buen producto y un punto creativo.
               </p>
             </div>
 
