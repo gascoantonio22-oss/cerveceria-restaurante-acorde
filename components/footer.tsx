@@ -15,9 +15,9 @@ export function Footer() {
         <div className="flex flex-col items-center text-center">
           <Link href="/" className="inline-flex justify-center">
             <img
-              src="/acorde-logo-principal-transparent.png"
+              src="/acorde-logo-no-gilda.png"
               alt="Acorde Cervecería"
-              className="h-24 w-auto md:h-28 lg:h-32"
+              className="h-28 w-auto md:h-32 lg:h-36"
             />
           </Link>
 
