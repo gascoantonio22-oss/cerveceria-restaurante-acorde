@@ -122,17 +122,30 @@ export function Navbar() {
         <div className="md:hidden">
           <button
             type="button"
-            className="fixed inset-0 top-20 z-40 bg-black/18 backdrop-blur-[2px]"
+            className="fixed inset-0 top-20 z-40 bg-black/40 backdrop-blur-[3px]"
             aria-label="Cerrar menú"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="absolute right-4 top-[5.6rem] z-50 w-[min(18.5rem,calc(100vw-2rem))] origin-top-right rounded-[1.6rem] border border-border/70 bg-background/96 p-3 shadow-[0_24px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
-            <div className="flex flex-col gap-1">
+          <div className="absolute right-4 top-[5.55rem] z-50 w-[min(18rem,calc(100vw-2rem))] origin-top-right overflow-hidden rounded-[2rem] border border-white/10 bg-[#120f0d]/92 p-3 shadow-[0_28px_80px_rgba(0,0,0,0.42)] ring-1 ring-[#b78f72]/12 backdrop-blur-xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
+            <div
+              className="pointer-events-none absolute inset-0 opacity-70"
+              style={{
+                background:
+                  "radial-gradient(circle at top right, rgba(145,60,47,0.28) 0%, transparent 34%), linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 28%)",
+              }}
+            />
+
+            <div className="relative flex flex-col gap-1">
+              <div className="mb-1 px-3 pt-2">
+                <span className="text-[0.68rem] font-medium uppercase tracking-[0.34em] text-[#c9b6a4]/68">
+                  Navegación
+                </span>
+              </div>
               {navLinks.map((link) => (
                 <SectionLink
                   key={link.href}
                   href={link.href}
-                  className="rounded-[1rem] px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted"
+                  className="rounded-[1.1rem] border border-transparent px-4 py-3 text-[1.05rem] font-medium text-[#f4ede4] transition-all hover:border-white/8 hover:bg-white/[0.04]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -140,15 +153,18 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="mt-3 border-t border-border/70 pt-3">
+            <div className="relative mt-3 border-t border-white/10 pt-3">
               <a
                 href={phoneHref}
-                className="flex items-center justify-between rounded-[1rem] px-4 py-3 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="flex items-center justify-between rounded-[1.1rem] px-4 py-3 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-[#c9b6a4] transition-all hover:bg-white/[0.04] hover:text-[#f4ede4]"
               >
                 <span>Llamar</span>
-                <span className="text-foreground">{phoneNumber}</span>
+                <span className="text-base tracking-[0.22em] text-[#f4ede4]">{phoneNumber}</span>
               </a>
-              <Button asChild className="w-full rounded-[1rem]">
+              <Button
+                asChild
+                className="mt-1 h-12 w-full rounded-full border border-[#8b4134]/40 bg-[#7b3126] text-[#fff8f3] shadow-[0_12px_30px_rgba(73,20,14,0.34)] transition-all hover:bg-[#8a3a2d]"
+              >
                 <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
                   Reservar
                 </Link>
