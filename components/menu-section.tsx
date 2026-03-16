@@ -1,3 +1,4 @@
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 type MenuCategory = {
@@ -100,9 +101,10 @@ const menuCategories: MenuCategory[] = [
 
 export function MenuSection() {
   return (
-    <section id="carta" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="carta" className="pt-10 pb-24 md:pt-20 lg:py-32 relative overflow-hidden bg-[#f2ede7]">
+      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-[#f2ede7]" />
       <div
-        className="absolute inset-0 bg-background"
+        className="absolute inset-0"
         style={{
           backgroundImage: `
             linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
@@ -113,7 +115,7 @@ export function MenuSection() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             El Mural de Acorde
           </span>
@@ -121,12 +123,52 @@ export function MenuSection() {
             La Carta
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Recorre la carta por categorías y ve pasando de una a otra. He dejado fuera los precios
-            para que la sección sea más limpia y más fácil de navegar.
+            En escritorio puedes recorrerla por categorías; en móvil la he compactado para que cambiar de
+            una a otra sea mucho más cómodo. He dejado fuera los precios para que la sección sea más limpia.
           </p>
         </div>
 
-        <Tabs defaultValue="conservas" className="gap-6">
+        <div className="md:hidden">
+          <Accordion type="single" collapsible defaultValue="conservas" className="rounded-sm border border-border bg-card shadow-sm">
+            {menuCategories.map((category) => (
+              <AccordionItem key={category.id} value={category.id} className="border-border px-5">
+                <AccordionTrigger className="py-5 hover:no-underline">
+                  <div>
+                    <span className="block text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground">
+                      {category.label}
+                    </span>
+                    <span className="mt-2 block font-serif text-2xl text-foreground">{category.title}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <p className="text-sm leading-relaxed text-muted-foreground">{category.subtitle}</p>
+                  {category.note ? (
+                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-primary/80">
+                      {category.note}
+                    </p>
+                  ) : null}
+                  <div className="mt-5 space-y-3">
+                    {category.items.map((item, index) => (
+                      <article
+                        key={item}
+                        className="rounded-sm border border-border/70 bg-background/80 px-4 py-3"
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="font-handwriting text-xl leading-none text-primary/70">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <p className="font-medium leading-snug text-foreground">{item}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <Tabs defaultValue="conservas" className="hidden gap-6 md:flex">
           <div className="overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <TabsList className="min-w-max h-auto gap-1 rounded-full bg-foreground/[0.04] p-1">
               {menuCategories.map((category) => (

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Instagram, Facebook } from "lucide-react"
+import { SectionLink } from "@/components/section-link"
 
 const reservationUrl =
   "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
@@ -41,24 +42,24 @@ export function Footer() {
             <h4 className="font-medium text-lg mb-6">Enlaces</h4>
             <ul className="space-y-4">
               <li>
-                <Link href="#nosotros" className="text-white/80 hover:text-white transition-colors">
+                <SectionLink href="#nosotros" className="text-white/80 hover:text-white transition-colors">
                   La Cervecería
-                </Link>
+                </SectionLink>
               </li>
               <li>
-                <Link href="#carta" className="text-white/80 hover:text-white transition-colors">
+                <SectionLink href="#carta" className="text-white/80 hover:text-white transition-colors">
                   Carta
-                </Link>
+                </SectionLink>
               </li>
               <li>
-                <Link href="#galeria" className="text-white/80 hover:text-white transition-colors">
+                <SectionLink href="#galeria" className="text-white/80 hover:text-white transition-colors">
                   Galería
-                </Link>
+                </SectionLink>
               </li>
               <li>
-                <Link href="#contacto" className="text-white/80 hover:text-white transition-colors">
+                <SectionLink href="#contacto" className="text-white/80 hover:text-white transition-colors">
                   Contacto
-                </Link>
+                </SectionLink>
               </li>
               <li>
                 <Link href={reservationUrl} className="text-white/80 hover:text-white transition-colors">

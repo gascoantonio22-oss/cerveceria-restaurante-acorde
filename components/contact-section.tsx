@@ -1,27 +1,11 @@
-"use client"
-
-import { useState } from "react"
 import { MapPin, Clock, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import Link from "next/link"
+
+const reservationUrl =
+  "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    guests: "",
-    date: "",
-    time: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Reservation submitted:", formData)
-    alert("¡Gracias! Hemos recibido tu solicitud de reserva. Te confirmaremos por teléfono o email.")
-  }
-
   return (
     <section id="contacto" className="py-24 lg:py-32 bg-muted relative">
       {/* Subtle tile texture */}
@@ -33,20 +17,24 @@ export function ContactSection() {
         backgroundSize: '40px 40px'
       }} />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact Info */}
-          <div>
+      <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="space-y-12">
+          <div className="text-center">
             <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-              En el Barrio de Goya
+              Jorge Juan, Madrid
             </span>
             <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium">
               Visítanos
             </h2>
-            
-            <div className="mt-12 space-y-8">
+            <p className="mt-5 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
+              Aquí tienes la dirección, el mapa y la forma más rápida de reservar en TheFork sin pasar por formulario.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="rounded-sm border border-border bg-background p-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-background border border-border flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-card border border-border flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -57,9 +45,11 @@ export function ContactSection() {
                   </p>
                 </div>
               </div>
+            </div>
 
+            <div className="rounded-sm border border-border bg-background p-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-background border border-border flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-card border border-border flex items-center justify-center">
                   <Clock className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -71,9 +61,11 @@ export function ContactSection() {
                   </p>
                 </div>
               </div>
+            </div>
 
+            <div className="rounded-sm border border-border bg-background p-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-background border border-border flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-card border border-border flex items-center justify-center">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -85,9 +77,11 @@ export function ContactSection() {
                   </p>
                 </div>
               </div>
+            </div>
 
+            <div className="rounded-sm border border-border bg-background p-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-background border border-border flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-card border border-border flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -100,9 +94,10 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Map */}
-            <div className="mt-12 aspect-video bg-background rounded-sm overflow-hidden relative border border-border">
+          <div className="space-y-6">
+            <div className="aspect-video bg-background rounded-sm overflow-hidden relative border border-border shadow-sm">
               <iframe
                 title="Mapa de Acorde Cervecería"
                 src="https://www.google.com/maps?q=C.%20de%20Jorge%20Juan%2C%20104%2C%20Salamanca%2C%2028009%20Madrid&z=17&output=embed"
@@ -115,106 +110,11 @@ export function ContactSection() {
                 <p className="text-sm text-muted-foreground">Salamanca, 28009 Madrid</p>
               </div>
             </div>
-          </div>
 
-          {/* Reservation Form */}
-          <div id="reservar" className="lg:pt-16">
-            <div className="bg-card border border-border p-8 md:p-10 rounded-sm shadow-sm">
-              <h3 className="font-serif text-2xl md:text-3xl font-medium text-card-foreground">
-                Reserva tu mesa
-              </h3>
-              <p className="mt-2 text-muted-foreground">
-                Completa el formulario y nos pondremos en contacto para confirmar.
-              </p>
-
-              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-foreground">Nombre completo</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Tu nombre"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="bg-background rounded-sm"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-foreground">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="tu@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="bg-background rounded-sm"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-foreground">Teléfono</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+34 600 000 000"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="bg-background rounded-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="guests" className="text-foreground">Número de personas</Label>
-                  <Input
-                    id="guests"
-                    type="number"
-                    min="1"
-                    max="20"
-                    placeholder="2"
-                    value={formData.guests}
-                    onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                    required
-                    className="bg-background rounded-sm"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="date" className="text-foreground">Fecha</Label>
-                    <Input
-                      id="date"
-                      type="date"
-                      value={formData.date}
-                      onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      required
-                      className="bg-background rounded-sm"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="time" className="text-foreground">Hora</Label>
-                    <Input
-                      id="time"
-                      type="time"
-                      value={formData.time}
-                      onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      required
-                      className="bg-background rounded-sm"
-                    />
-                  </div>
-                </div>
-
-                <Button type="submit" size="lg" className="w-full rounded-sm">
-                  Solicitar reserva
-                </Button>
-
-                <p className="text-xs text-center text-muted-foreground">
-                  Te confirmaremos la reserva en menos de 24 horas
-                </p>
-              </form>
+            <div className="flex justify-center">
+              <Button asChild size="lg" className="rounded-sm">
+                <Link href={reservationUrl}>Reservar en TheFork</Link>
+              </Button>
             </div>
           </div>
         </div>

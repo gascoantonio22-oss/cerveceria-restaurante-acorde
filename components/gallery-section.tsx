@@ -2,32 +2,44 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1974&auto=format&fit=crop",
-    alt: "Interior cálido con el mural de azulejos y botellas de vermut retro-iluminadas",
+    src: "/gallery-1.jpg",
+    alt: "Fachada de Acorde Cervecería",
     className: "col-span-2 row-span-2",
-    label: "El Mural",
+    label: "La Fachada",
   },
   {
-    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop",
-    alt: "Barra de mármol con tiradores de cerveza Mahou",
+    src: "/gallery-2.jpg",
+    alt: "Mesa del comedor interior de Acorde",
+    className: "col-span-1 row-span-1",
+    label: "El Comedor",
+  },
+  {
+    src: "/gallery-3.jpg",
+    alt: "Gambas servidas junto a la ventana",
     className: "col-span-1 row-span-1",
     label: "La Barra",
   },
   {
-    src: "https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=2036&auto=format&fit=crop",
-    alt: "Botellas de Vermut Luis XIV iluminadas",
-    className: "col-span-1 row-span-1",
-    label: "El Vermut",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop",
-    alt: "Detalle del acero inoxidable de la fachada",
+    src: "/gallery-4.jpg",
+    alt: "Mesa junto al ventanal con vistas a Jorge Juan",
     className: "col-span-1 row-span-2",
-    label: "La Fachada",
+    label: "La Ventana",
   },
   {
-    src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
-    alt: "Ambiente del restaurante con copas colgantes",
+    src: "/gallery-5.jpg",
+    alt: "Botellas, copas colgantes y mural de azulejos en la barra",
+    className: "col-span-1 row-span-1",
+    label: "El Mural",
+  },
+  {
+    src: "/gallery-6.jpg",
+    alt: "Barra principal iluminada de Acorde",
+    className: "col-span-1 row-span-1",
+    label: "La Barra",
+  },
+  {
+    src: "/gallery-7.jpg",
+    alt: "Sala interior con mesas montadas y obra de arte",
     className: "col-span-1 row-span-1",
     label: "El Ambiente",
   },
@@ -45,13 +57,11 @@ export function GallerySection() {
             Galería
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Un recorrido visual por los rincones que hacen de Acorde 
-            un lugar único en el barrio de Goya.
+            Un recorrido visual por la fachada, la barra y el comedor de Acorde tal y como se viven en casa.
           </p>
         </div>
 
-        {/* Masonry-style Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+        <div className="grid grid-cols-2 gap-4 auto-rows-[180px] md:grid-cols-3 md:auto-rows-[250px]">
           {galleryImages.map((image, index) => (
             <div
               key={index}

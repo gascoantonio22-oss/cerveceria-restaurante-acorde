@@ -1,24 +1,29 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
-
-const reservationUrl =
-  "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
+import { SectionLink } from "@/components/section-link"
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Draft beer on marble counter */}
       <div
-        className="absolute inset-0 bg-cover bg-[center_35%] md:bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-[center_24%] bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: "url('/acorde-fachada.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/82" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/88 via-black/76 to-black/90" />
+      </div>
+
+      <div
+        className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat md:block"
         style={{
           backgroundImage:
             "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/La_barra_que_sea_de_marmol_blancpo_no_madera_y_que_delpmaspu.png-tpGThbtnIPDAsAkusMwlWDfrMiLk5O.jpeg')",
         }}
       >
-        {/* Semi-transparent dark overlay for logo prominence */}
-        <div className="absolute inset-0 bg-black/60 md:bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/70 md:from-black/70 md:via-transparent md:to-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/60" />
       </div>
 
       {/* Content */}
@@ -28,7 +33,12 @@ export function HeroSection() {
           <img
             src="/acorde-logo-principal.png"
             alt="Acorde Cervecería"
-            className="h-36 sm:h-44 md:h-72 lg:h-80 max-w-[88vw] sm:max-w-[80vw] md:max-w-none w-auto mx-auto"
+            className="h-36 sm:h-44 md:hidden max-w-[88vw] sm:max-w-[80vw] w-auto mx-auto"
+          />
+          <img
+            src="/acorde-logo-principal-transparent.png"
+            alt="Acorde Cervecería"
+            className="hidden md:block md:h-72 lg:h-80 w-auto mx-auto"
           />
         </div>
 
@@ -56,7 +66,7 @@ export function HeroSection() {
             size="lg"
             className="bg-background text-foreground hover:bg-background/90 text-base px-8 rounded-sm"
           >
-            <Link href={reservationUrl}>Reservar</Link>
+            <SectionLink href="#carta">Explorar la carta</SectionLink>
           </Button>
           <Button
             asChild
@@ -64,16 +74,16 @@ export function HeroSection() {
             size="lg"
             className="border-2 border-background/60 text-background hover:bg-background/10 text-base px-8 rounded-sm bg-transparent"
           >
-            <Link href="#carta">Explorar la carta</Link>
+            <SectionLink href="#contacto">Dónde estamos</SectionLink>
           </Button>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <Link href="#nosotros" aria-label="Scroll down">
+        <SectionLink href="#nosotros" aria-label="Scroll down">
           <ChevronDown className="h-8 w-8 text-background/70" />
-        </Link>
+        </SectionLink>
       </div>
     </section>
   )

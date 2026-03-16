@@ -14,7 +14,7 @@ function GildaIllustration({ className }: { className?: string }) {
 
 export function AboutSection() {
   return (
-    <section id="nosotros" className="py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="nosotros" className="pt-24 pb-12 md:pb-16 lg:py-32 bg-background relative overflow-hidden">
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
@@ -30,28 +30,43 @@ export function AboutSection() {
             <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight text-balance">
               Tradición madrileña con alma artística
             </h2>
-            <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
-              <p>
+            <div className="mt-6 md:mt-8 text-base md:text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-5 md:hidden">
+                <p>
+                  En Acorde nos gusta lo de siempre: una buena caña, una barra donde apoyarse y algo
+                  rico para compartir. Recuperamos el espíritu de las cervecerías madrileñas de toda la
+                  vida para que el plan vuelva a ser sencillo: quedar, picar algo y dejar que la
+                  conversación se alargue.
+                </p>
+                <p>
+                  La barra de mármol, la madera del comedor y el mural pintado a mano sobre azulejos
+                  blancos conviven con el jamón recién cortado, el vermut iluminado y ese sonido de las
+                  cañas que hace que apetezca quedarse un rato más.
+                </p>
+              </div>
+              <div className="hidden space-y-6 md:block">
+                <p>
                 En Acorde nos gusta lo de siempre: una buena caña, una barra donde apoyarse y algo rico
                 para compartir. Nacimos con la idea de recuperar el espíritu de las cervecerías
                 madrileñas de toda la vida, esos sitios donde el plan era sencillo: quedar, picar algo y
                 dejar que la conversación se alargue.
-              </p>
-              <p>
+                </p>
+                <p>
                 La barra de mármol, la madera del comedor y las copas de cristal colgadas forman parte de
                 ese ambiente clásico. Pero también hay un pequeño guiño artístico: un mural pintado a mano
                 sobre azulejos blancos donde aparecen algunos de los grandes protagonistas del tapeo, la
                 gilda, los boquerones y las conservas, como si fueran pequeñas piezas de arte cotidiano.
-              </p>
-              <p>
+                </p>
+                <p>
                 Las botellas de vermut iluminadas, el jamón recién cortado y el sonido de las cañas al
                 servirse hacen el resto. Un lugar para venir sin prisa, compartir unas tapas y disfrutar
                 de ese Madrid que mezcla tradición, buen producto y un punto creativo.
-              </p>
+                </p>
+              </div>
             </div>
 
             {/* Decorative line with steel accent */}
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-8 md:mt-10 flex items-center gap-4">
               <div className="h-px flex-1 bg-gradient-to-r from-border via-secondary to-border" />
               <span className="font-handwriting text-2xl text-primary">una vida entera tirando cañas</span>
               <div className="h-px flex-1 bg-gradient-to-r from-border via-secondary to-border" />

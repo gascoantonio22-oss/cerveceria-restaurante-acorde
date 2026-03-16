@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { SectionLink } from "@/components/section-link"
 
 const reservationUrl =
   "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
@@ -16,6 +17,13 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`)
+      window.scrollTo(0, 0)
+    }
+
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -40,23 +48,22 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <img
-              src={isScrolled ? "/acorde-logo-completo.png" : "/acorde-logo-principal.png"}
+              src={
+                isScrolled
+                  ? "/acorde-logo-completo.png"
+                  : "/acorde-logo-principal-transparent.png"
+              }
               alt="Acorde Cervecería"
-              className={`md:hidden w-auto transition-all duration-300 ${
-                isScrolled ? "h-10" : "h-12"
+              className={`h-12 md:h-14 lg:h-16 w-auto origin-left transition-all duration-300 ${
+                isScrolled ? "scale-[1.08]" : "scale-100"
               }`}
-            />
-            <img
-              src="/acorde-logo-principal.png"
-              alt="Acorde Cervecería"
-              className="hidden md:block h-14 w-auto transition-all duration-300"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <SectionLink
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:opacity-70 ${
@@ -64,7 +71,7 @@ export function Navbar() {
                 }`}
               >
                 {link.label}
-              </Link>
+              </SectionLink>
             ))}
           </div>
 
@@ -101,14 +108,14 @@ export function Navbar() {
           <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border">
             <div className="flex flex-col gap-4 p-6">
               {navLinks.map((link) => (
-                <Link
+                <SectionLink
                   key={link.href}
                   href={link.href}
                   className="text-foreground font-medium transition-colors hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </Link>
+                </SectionLink>
               ))}
               <Button asChild className="w-full mt-2">
                 <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
