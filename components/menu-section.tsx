@@ -103,6 +103,19 @@ const menuCategories: MenuCategory[] = [
 export function MenuSection() {
   return (
     <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-12 pb-14 md:pt-16 md:pb-24 lg:pt-24 lg:pb-28">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 scale-[1.035]">
+          <Image
+            src="/menu-barra-bg.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center opacity-[0.06] blur-[2px] saturate-[0.88] md:opacity-[0.11]"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[rgba(247,242,236,0.9)] md:bg-[rgba(247,242,236,0.84)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.65),transparent_54%),linear-gradient(180deg,rgba(255,255,255,0.62),rgba(242,237,231,0.72))]" />
+      </div>
       <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-transparent" />
       <div
         className="absolute inset-0"
