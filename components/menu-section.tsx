@@ -162,18 +162,19 @@ export function MenuSection() {
           >
             {menuCategories.map((category) => (
               <AccordionItem key={category.id} value={category.id} className="border-border px-5">
-                <AccordionTrigger className="py-5 hover:no-underline">
-                  <div>
-                    <span className="block text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground">
-                      {category.label}
+                <AccordionTrigger className="flex-col items-center justify-center gap-3 py-5 text-center hover:no-underline [&>svg]:mx-auto [&>svg]:translate-y-0">
+                  <div className="flex flex-col items-center text-center">
+                    <span className="block font-serif text-[2rem] leading-none text-foreground">
+                      {category.title}
                     </span>
-                    <span className="mt-2 block font-serif text-2xl text-foreground">{category.title}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pb-5">
-                  <p className="text-sm leading-relaxed text-muted-foreground">{category.subtitle}</p>
+                  <p className="mx-auto max-w-[21rem] text-center text-sm leading-relaxed text-muted-foreground">
+                    {category.subtitle}
+                  </p>
                   {category.note ? (
-                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-primary/80">
+                    <p className="mt-3 text-center text-xs font-medium uppercase tracking-[0.18em] text-primary/80">
                       {category.note}
                     </p>
                   ) : null}
