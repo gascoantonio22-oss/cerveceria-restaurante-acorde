@@ -72,8 +72,9 @@ export function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
 
   return (
-    <section id="galeria" className="relative overflow-hidden bg-[#fbf8f3] pt-14 pb-20 md:py-24 lg:py-32">
-      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#f2ede7] via-[#f8f5f0] to-transparent" />
+    <section id="galeria" className="relative overflow-hidden bg-background pt-14 pb-20 md:py-24 lg:py-32">
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f2ede7] via-[#f7f2ec]/84 to-transparent" />
+      <div className="absolute inset-x-0 top-[-2.75rem] h-20 bg-[radial-gradient(ellipse_at_center,rgba(242,237,231,0.95),rgba(242,237,231,0.42)_48%,transparent_82%)] blur-2xl" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/6 to-black/22" />
       <div className="absolute inset-x-0 bottom-4 flex justify-center">
         <div className="flex items-center gap-3 text-black/16">
@@ -82,14 +83,6 @@ export function GallerySection() {
           <div className="h-px w-12 bg-current" />
         </div>
       </div>
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)",
-          backgroundSize: "54px 54px",
-        }}
-      />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-14 text-center">
