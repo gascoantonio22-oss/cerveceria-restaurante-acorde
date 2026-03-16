@@ -37,9 +37,16 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <img
+              src={isScrolled ? "/acorde-logo-completo.png" : "/acorde-logo-principal.png"}
+              alt="Acorde Cervecería"
+              className={`md:hidden w-auto transition-all duration-300 ${
+                isScrolled ? "h-10" : "h-12"
+              }`}
+            />
+            <img
               src="/acorde-logo-principal.png"
               alt="Acorde Cervecería"
-              className="h-14 w-auto transition-all"
+              className="hidden md:block h-14 w-auto transition-all duration-300"
             />
           </Link>
 

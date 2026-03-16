@@ -25,7 +25,7 @@ export function HeroSection() {
           <img
             src="/acorde-logo-principal.png"
             alt="Acorde Cervecería"
-            className="h-32 sm:h-40 md:h-72 lg:h-80 max-w-[84vw] sm:max-w-[78vw] md:max-w-none w-auto mx-auto"
+            className="h-36 sm:h-44 md:h-72 lg:h-80 max-w-[88vw] sm:max-w-[80vw] md:max-w-none w-auto mx-auto"
           />
         </div>
 
