@@ -8,22 +8,41 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-[center_24%] bg-no-repeat md:hidden"
         style={{
-          backgroundImage: "url('/acorde-fachada.jpg')",
+          backgroundImage: "url('/acorde-fachada-hola.png')",
         }}
       >
-        <div className="absolute inset-0 bg-black/82" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/88 via-black/76 to-black/90" />
+        <div className="absolute inset-0 bg-black/68" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/76 via-black/52 to-black/78" />
       </div>
 
-      <div
-        className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat md:block"
-        style={{
-          backgroundImage:
-            "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/La_barra_que_sea_de_marmol_blancpo_no_madera_y_que_delpmaspu.png-tpGThbtnIPDAsAkusMwlWDfrMiLk5O.jpeg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/60" />
+      <div className="absolute inset-0 hidden md:block">
+        <div
+          className="absolute inset-0 scale-110 bg-cover bg-[center_18%] bg-no-repeat opacity-28 blur-sm"
+          style={{
+            backgroundImage: "url('/acorde-fachada-hola.png')",
+          }}
+        />
+        <div
+          className="absolute inset-y-0 right-0 w-[46vw] min-w-[420px] bg-cover bg-[center_12%] bg-no-repeat opacity-[0.97]"
+          style={{
+            backgroundImage: "url('/acorde-fachada-hola.png')",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.88) 34%, rgba(0,0,0,0.66) 58%, rgba(0,0,0,0.58) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-80"
+          style={{
+            background:
+              "radial-gradient(circle at 76% 38%, rgba(228,163,76,0.18) 0%, rgba(228,163,76,0.08) 14%, transparent 28%)",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-transparent to-black/68" />
       </div>
 
       {/* Content */}
@@ -33,7 +52,7 @@ export function HeroSection() {
           <img
             src="/acorde-logo-principal.png"
             alt="Acorde Cervecería"
-            className="h-36 sm:h-44 md:hidden max-w-[88vw] sm:max-w-[80vw] w-auto mx-auto"
+            className="h-40 sm:h-48 md:hidden max-w-[90vw] sm:max-w-[84vw] w-auto mx-auto"
           />
           <img
             src="/acorde-logo-principal-transparent.png"

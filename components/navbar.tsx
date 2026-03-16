@@ -54,7 +54,7 @@ export function Navbar() {
                   : "/acorde-logo-principal-transparent.png"
               }
               alt="Acorde Cervecería"
-              className={`h-12 md:h-14 lg:h-16 w-auto origin-left transition-all duration-300 ${
+              className={`h-[3.35rem] md:h-14 lg:h-16 w-auto origin-left transition-all duration-300 ${
                 isScrolled ? "scale-[1.08]" : "scale-100"
               }`}
             />
@@ -103,29 +103,41 @@ export function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border">
-            <div className="flex flex-col gap-4 p-6">
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden">
+          <button
+            type="button"
+            className="fixed inset-0 top-20 z-40 bg-black/18 backdrop-blur-[2px]"
+            aria-label="Cerrar menú"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="absolute right-4 top-[5.6rem] z-50 w-[min(18.5rem,calc(100vw-2rem))] origin-top-right rounded-[1.6rem] border border-border/70 bg-background/96 p-3 shadow-[0_24px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <SectionLink
                   key={link.href}
                   href={link.href}
-                  className="text-foreground font-medium transition-colors hover:text-primary"
+                  className="rounded-[1rem] px-4 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </SectionLink>
               ))}
-              <Button asChild className="w-full mt-2">
+            </div>
+
+            <div className="mt-3 border-t border-border/70 pt-3">
+              <Button asChild className="w-full rounded-[1rem]">
                 <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
                   Reservar
                 </Link>
               </Button>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
     </header>
   )
 }

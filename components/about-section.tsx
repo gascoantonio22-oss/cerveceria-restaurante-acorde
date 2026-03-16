@@ -77,7 +77,7 @@ export function AboutSection() {
           <div className="order-1 lg:order-2 relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border/50">
               <Image
-                src="/acorde-fachada.jpg"
+                src="/acorde-fachada-hola.png"
                 alt="Fachada de Acorde Cerveceria"
                 fill
                 className="object-cover"
