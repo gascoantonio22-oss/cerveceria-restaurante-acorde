@@ -50,7 +50,7 @@ export function HeroSection() {
         {/* Logo */}
         <div className="mb-6 md:mb-8">
           <img
-            src="/acorde-logo-principal.png"
+            src="/acorde-logo-principal-transparent.png"
             alt="Acorde Cervecería"
             className="h-40 sm:h-48 md:hidden max-w-[90vw] sm:max-w-[84vw] w-auto mx-auto"
           />

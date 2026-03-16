@@ -14,12 +14,13 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
           {/* Logo & Description */}
           <div>
-            <Link href="/" className="font-serif text-3xl font-semibold tracking-tight uppercase">
-              Acorde
+            <Link href="/" className="inline-block">
+              <img
+                src="/acorde-logo-principal-transparent.png"
+                alt="Acorde Cervecería"
+                className="h-16 w-auto"
+              />
             </Link>
-            <p className="text-sm tracking-widest uppercase text-white/70 mt-1">
-              Cervecería
-            </p>
             <p className="mt-6 text-white/80 leading-relaxed max-w-xs">
               El arte del tapeo tradicional en el corazón de Goya. 
               Donde cada detalle cuenta una historia.
@@ -107,9 +108,16 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/60 text-sm">
-              © {currentYear} Acorde Cervecería. Todos los derechos reservados.
-            </p>
+            <div className="flex items-center gap-4">
+              <img
+                src="/acorde-logo-principal-transparent.png"
+                alt="Acorde Cervecería"
+                className="h-10 w-auto"
+              />
+              <p className="text-white/60 text-sm">
+                © {currentYear} Acorde Cervecería. Todos los derechos reservados.
+              </p>
+            </div>
             <div className="flex gap-6 text-sm">
               <Link href="#" className="text-white/60 hover:text-white transition-colors">
                 Política de privacidad
