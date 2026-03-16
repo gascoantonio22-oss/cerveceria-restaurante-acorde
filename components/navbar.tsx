@@ -8,6 +8,8 @@ import { SectionLink } from "@/components/section-link"
 
 const reservationUrl =
   "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
+const phoneNumber = "914 21 36 74"
+const phoneHref = "tel:+34914213674"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -76,7 +78,15 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-5">
+            <a
+              href={phoneHref}
+              className={`text-sm font-medium tracking-[0.12em] uppercase transition-colors hover:opacity-70 ${
+                isScrolled ? "text-foreground" : "text-background"
+              }`}
+            >
+              {phoneNumber}
+            </a>
             <Button
               asChild
               className={`transition-all ${
@@ -129,6 +139,13 @@ export function Navbar() {
             </div>
 
             <div className="mt-3 border-t border-border/70 pt-3">
+              <a
+                href={phoneHref}
+                className="flex items-center justify-between rounded-[1rem] px-4 py-3 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              >
+                <span>Llamar</span>
+                <span className="text-foreground">{phoneNumber}</span>
+              </a>
               <Button asChild className="w-full rounded-[1rem]">
                 <Link href={reservationUrl} onClick={() => setIsMobileMenuOpen(false)}>
                   Reservar

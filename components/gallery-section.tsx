@@ -1,89 +1,177 @@
-import Image from "next/image"
+"use client"
 
-const galleryImages = [
+import { useState } from "react"
+import Image from "next/image"
+import { Expand, X } from "lucide-react"
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
+
+type GalleryImage = {
+  src: string
+  alt: string
+  label: string
+  className: string
+  fit?: "cover" | "contain"
+  qualityNote?: string
+}
+
+const galleryImages: GalleryImage[] = [
   {
-    src: "/gallery-1.jpg",
+    src: "/gallery-menu.png",
+    alt: "Carta de Acorde Cervecería",
+    label: "La Carta",
+    className: "col-span-2 row-span-2 md:col-span-6 md:row-span-2",
+    fit: "contain",
+    qualityNote: "Ampliable en la mejor resolución disponible.",
+  },
+  {
+    src: "/acorde-fachada-hola.png",
     alt: "Fachada de Acorde Cervecería",
-    className: "col-span-2 row-span-2",
     label: "La Fachada",
+    className: "col-span-1 row-span-2 md:col-span-3 md:row-span-2",
   },
   {
-    src: "/gallery-2.jpg",
+    src: "/gallery-comedor.webp",
     alt: "Mesa del comedor interior de Acorde",
-    className: "col-span-1 row-span-1",
     label: "El Comedor",
+    className: "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
   },
   {
-    src: "/gallery-3.jpg",
-    alt: "Gambas servidas junto a la ventana",
-    className: "col-span-1 row-span-1",
-    label: "La Barra",
-  },
-  {
-    src: "/gallery-4.jpg",
+    src: "/gallery-ventana.webp",
     alt: "Mesa junto al ventanal con vistas a Jorge Juan",
-    className: "col-span-1 row-span-2",
     label: "La Ventana",
+    className: "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
   },
   {
-    src: "/gallery-5.jpg",
-    alt: "Botellas, copas colgantes y mural de azulejos en la barra",
-    className: "col-span-1 row-span-1",
+    src: "/gallery-mural.jpg",
+    alt: "Mural de azulejos, botellas y copas colgantes en la barra",
     label: "El Mural",
+    className: "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
+    qualityNote: "Foto cargada desde el original más nítido disponible.",
   },
   {
-    src: "/gallery-6.jpg",
+    src: "/gallery-barra.webp",
     alt: "Barra principal iluminada de Acorde",
-    className: "col-span-1 row-span-1",
     label: "La Barra",
+    className: "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
   },
   {
-    src: "/gallery-7.jpg",
+    src: "/gallery-sala.webp",
     alt: "Sala interior con mesas montadas y obra de arte",
-    className: "col-span-1 row-span-1",
     label: "El Ambiente",
+    className: "col-span-1 row-span-1 md:col-span-4 md:row-span-1",
+  },
+  {
+    src: "/gallery-gambas.webp",
+    alt: "Plato de gambas servido junto a la ventana",
+    label: "Las Gambas",
+    className: "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
   },
 ]
 
 export function GallerySection() {
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
+
   return (
-    <section id="galeria" className="py-24 lg:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+    <section id="galeria" className="relative overflow-hidden bg-[#fbf8f3] py-24 lg:py-32">
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f2ede7] via-[#f7f3ee] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black/10" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)",
+          backgroundSize: "54px 54px",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
+        <div className="mb-14 text-center">
+          <span className="text-sm font-medium uppercase tracking-[0.24em] text-muted-foreground">
             Arte y Atmósfera
           </span>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium">
+          <h2 className="mt-4 font-serif text-4xl font-medium md:text-5xl lg:text-6xl">
             Galería
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Un recorrido visual por la fachada, la barra y el comedor de Acorde tal y como se viven en casa.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+            Un recorrido por la carta, la fachada, la barra y el comedor. Puedes abrir cada imagen y
+            verla a mayor tamaño cuando quieras detenerte en un detalle.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 auto-rows-[180px] md:grid-cols-3 md:auto-rows-[250px]">
+        <div className="grid grid-cols-2 auto-rows-[170px] gap-4 md:grid-cols-12 md:auto-rows-[220px]">
           {galleryImages.map((image, index) => (
-            <div
-              key={index}
-              className={`relative overflow-hidden rounded-sm group ${image.className}`}
+            <button
+              key={image.src}
+              type="button"
+              onClick={() => setSelectedImage(image)}
+              className={`group relative overflow-hidden rounded-[1.35rem] border border-black/8 bg-black/5 text-left shadow-[0_18px_40px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:-translate-y-1 ${image.className}`}
+              aria-label={`Abrir ${image.label}`}
             >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                quality={100}
+                priority={index < 2}
+                sizes={index === 0 ? "(max-width: 767px) 100vw, 52vw" : "(max-width: 767px) 50vw, (max-width: 1279px) 33vw, 28vw"}
+                className={`${image.fit === "contain" ? "object-contain p-2 md:p-3" : "object-cover"} transition-transform duration-700 group-hover:scale-[1.03]`}
               />
-              {/* Overlay with label */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="font-handwriting text-2xl text-background">{image.label}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 text-white">
+                <div>
+                  <p className="font-handwriting text-2xl leading-none md:text-[2rem]">{image.label}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/68">Toca para ampliar</p>
+                </div>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur-sm">
+                  <Expand className="h-4 w-4" />
+                </span>
               </div>
-              {/* Metallic frame effect on hover */}
-              <div className="absolute inset-0 ring-2 ring-secondary/0 group-hover:ring-secondary/30 transition-all duration-300 rounded-sm" />
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent
+          showCloseButton={false}
+          className="w-[min(96vw,1500px)] max-w-[96vw] border border-white/10 bg-black/95 p-3 text-white shadow-[0_40px_120px_rgba(0,0,0,0.6)] sm:p-4"
+        >
+          {selectedImage ? (
+            <div className="relative">
+              <DialogTitle className="sr-only">{selectedImage.label}</DialogTitle>
+              <DialogDescription className="sr-only">{selectedImage.alt}</DialogDescription>
+              <button
+                type="button"
+                onClick={() => setSelectedImage(null)}
+                className="absolute right-1 top-1 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-black/45 text-white transition-colors hover:bg-black/70"
+                aria-label="Cerrar imagen"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              <div className="overflow-hidden rounded-[1.2rem] border border-white/10 bg-black">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="mx-auto max-h-[82vh] w-auto max-w-full object-contain"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2 px-1 pt-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="font-handwriting text-[2rem] leading-none text-white sm:text-[2.3rem]">
+                    {selectedImage.label}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-white/68">{selectedImage.alt}</p>
+                </div>
+                <p className="max-w-sm text-xs uppercase tracking-[0.2em] text-white/45">
+                  {selectedImage.qualityNote ?? "Vista ampliada desde el archivo original disponible en la web."}
+                </p>
+              </div>
+            </div>
+          ) : null}
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

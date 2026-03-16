@@ -7,7 +7,8 @@ const reservationUrl =
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="py-24 lg:py-32 bg-black text-white relative overflow-hidden">
+    <section id="contacto" className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-32">
+      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#fbf8f3] via-[#b08c72]/10 to-transparent" />
       <div
         className="absolute inset-0"
         style={{
@@ -15,15 +16,15 @@ export function ContactSection() {
             linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
             linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)
           `,
-          backgroundSize: "40px 40px",
+          backgroundSize: "42px 42px",
         }}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_32%),linear-gradient(to_bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.94))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(178,127,86,0.18),transparent_26%),radial-gradient(circle_at_78%_16%,rgba(255,255,255,0.07),transparent_20%),linear-gradient(to_bottom,rgba(0,0,0,0.82),rgba(0,0,0,0.96))]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="space-y-12">
-          <div className="text-center">
-            <span className="text-sm font-medium uppercase tracking-widest text-white/55">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
+        <div className="space-y-14">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">
               Jorge Juan, Madrid
             </span>
             <h2 className="mt-4 font-serif text-4xl text-white md:text-5xl lg:text-6xl font-medium">
@@ -32,86 +33,116 @@ export function ContactSection() {
             <p className="mt-5 max-w-2xl mx-auto text-lg text-white/72 leading-relaxed">
               Aquí tienes la dirección, el mapa y la forma más rápida de reservar sin pasar por formulario.
             </p>
+            <div className="mt-7 flex items-center justify-center gap-4 text-white/55">
+              <div className="h-px w-14 bg-white/18" />
+              <span className="font-handwriting text-[1.9rem] leading-none text-white/70">
+                con calma y buena barra
+              </span>
+              <div className="h-px w-14 bg-white/18" />
+            </div>
           </div>
 
-          <div className="grid gap-8 xl:grid-cols-[0.92fr_1.18fr] xl:items-start">
-            <div className="rounded-sm border border-white/12 bg-white/[0.04] p-8 md:p-10 shadow-[0_24px_60px_rgba(0,0,0,0.24)] backdrop-blur-sm">
-              <div className="space-y-6">
-                <div className="flex gap-4 border-b border-white/10 pb-6 last:border-b-0 last:pb-0">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-white/[0.03] border border-white/12 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-white/80" />
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div className="order-2 space-y-8 lg:order-1">
+              <div className="grid gap-6 rounded-[2rem] border border-white/8 bg-white/[0.02] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.24)] backdrop-blur-sm md:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                    <MapPin className="h-4 w-4 text-white/82" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-white">Dirección</h3>
-                    <p className="mt-1 text-white/70">
-                      C. de Jorge Juan, 104<br />
+                    <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Dirección</p>
+                    <p className="mt-2 text-2xl font-serif leading-tight text-white md:text-[2rem]">
+                      C. de Jorge Juan, 104
+                    </p>
+                    <p className="mt-2 text-base leading-relaxed text-white/65">
                       Salamanca, 28009 Madrid
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4 border-b border-white/10 pb-6 last:border-b-0 last:pb-0">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-white/[0.03] border border-white/12 flex items-center justify-center">
-                    <Clock className="h-5 w-5 text-white/80" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-white">Horarios</h3>
-                    <p className="mt-1 text-white/70">
-                      Lunes a Jueves: 12:00 - 00:00<br />
-                      Viernes y Sábado: 12:00 - 01:00<br />
-                      Domingo: 12:00 - 23:00
-                    </p>
-                  </div>
-                </div>
+                <div className="h-px bg-gradient-to-r from-white/16 via-white/8 to-transparent" />
 
-                <div className="flex gap-4 border-b border-white/10 pb-6 last:border-b-0 last:pb-0">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-white/[0.03] border border-white/12 flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-white/80" />
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                      <Clock className="h-4 w-4 text-white/82" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Horarios</p>
+                      <p className="mt-2 text-base leading-relaxed text-white/68">
+                        Lunes a Jueves: 12:00 - 00:00
+                        <br />
+                        Viernes y Sábado: 12:00 - 01:00
+                        <br />
+                        Domingo: 12:00 - 23:00
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-white">Teléfono</h3>
-                    <p className="mt-1 text-white/70">
-                      <a href="tel:+34912345678" className="hover:text-white transition-colors">
-                        +34 912 345 678
-                      </a>
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-white/[0.03] border border-white/12 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-white/80" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-white">Email</h3>
-                    <p className="mt-1 text-white/70">
-                      <a href="mailto:hola@acorde.es" className="hover:text-white transition-colors">
-                        hola@acorde.es
-                      </a>
-                    </p>
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                        <Phone className="h-4 w-4 text-white/82" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Teléfono</p>
+                        <p className="mt-2 text-base leading-relaxed text-white/68">
+                          <a href="tel:+34914213674" className="transition-colors hover:text-white">
+                            914 21 36 74
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
+                        <Mail className="h-4 w-4 text-white/82" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">Email</p>
+                        <p className="mt-2 text-base leading-relaxed text-white/68">
+                          <a href="mailto:hola@acorde.es" className="transition-colors hover:text-white">
+                            hola@acorde.es
+                          </a>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 flex justify-start">
-                <Button asChild size="lg" className="rounded-sm bg-white text-black hover:bg-white/90">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-white px-8 text-black hover:bg-white/92"
+                >
                   <Link href={reservationUrl}>Reservar</Link>
                 </Button>
+                <p className="text-sm leading-relaxed text-white/48">
+                  Una barra para quedarse un rato y una mesa para alargar la conversación.
+                </p>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="aspect-[5/4] bg-white/[0.04] rounded-sm overflow-hidden relative border border-white/12 shadow-[0_24px_60px_rgba(0,0,0,0.24)] xl:aspect-[16/11]">
-                <iframe
-                  title="Mapa de Acorde Cervecería"
-                  src="https://www.google.com/maps?q=C.%20de%20Jorge%20Juan%2C%20104%2C%20Salamanca%2C%2028009%20Madrid&z=17&output=embed"
-                  className="absolute inset-0 h-full w-full border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-                <div className="absolute left-4 top-4 bg-black/78 backdrop-blur-md px-4 py-3 rounded-sm border border-white/10 shadow-sm">
-                  <p className="font-serif text-lg text-white">C. de Jorge Juan, 104</p>
-                  <p className="text-sm text-white/65">Salamanca, 28009 Madrid</p>
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-[2rem] border border-white/8" />
+                <div className="absolute -left-3 top-8 hidden h-28 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent lg:block" />
+                <div className="absolute -right-3 bottom-8 hidden h-28 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent lg:block" />
+                <div className="relative aspect-[5/4] overflow-hidden rounded-[1.6rem] border border-white/12 bg-white/[0.04] shadow-[0_28px_70px_rgba(0,0,0,0.35)] xl:aspect-[16/11]">
+                  <iframe
+                    title="Mapa de Acorde Cervecería"
+                    src="https://www.google.com/maps?q=C.%20de%20Jorge%20Juan%2C%20104%2C%20Salamanca%2C%2028009%20Madrid&z=17&output=embed"
+                    className="absolute inset-0 h-full w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute left-5 top-5 max-w-[16rem] rounded-[1.2rem] border border-white/12 bg-black/72 px-5 py-4 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.28)]">
+                    <p className="font-serif text-2xl leading-none text-white">C. de Jorge Juan, 104</p>
+                    <p className="mt-2 text-sm text-white/65">Salamanca, 28009 Madrid</p>
+                  </div>
                 </div>
               </div>
             </div>

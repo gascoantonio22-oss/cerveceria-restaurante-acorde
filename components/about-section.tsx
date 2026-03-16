@@ -14,13 +14,15 @@ function GildaIllustration({ className }: { className?: string }) {
 
 export function AboutSection() {
   return (
-    <section id="nosotros" className="pt-24 pb-12 md:pb-16 lg:py-32 bg-background relative overflow-hidden">
+    <section id="nosotros" className="relative overflow-hidden bg-background pt-24 pb-12 md:pb-16 lg:py-32">
+      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black via-black/45 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.2),transparent_66%)]" />
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <div className="order-2 lg:order-1">
@@ -75,7 +77,7 @@ export function AboutSection() {
 
           {/* Images */}
           <div className="order-1 lg:order-2 relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border/50">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border/50 shadow-[0_28px_70px_rgba(0,0,0,0.12)]">
               <Image
                 src="/acorde-fachada-hola.png"
                 alt="Fachada de Acorde Cerveceria"

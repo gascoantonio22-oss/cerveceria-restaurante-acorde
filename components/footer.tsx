@@ -97,8 +97,8 @@ export function Footer() {
               <p>C. de Jorge Juan, 104</p>
               <p>Salamanca, 28009 Madrid</p>
               <p className="mt-2">
-                <a href="tel:+34912345678" className="hover:text-white transition-colors">
-                  +34 912 345 678
+                <a href="tel:+34914213674" className="hover:text-white transition-colors">
+                  914 21 36 74
                 </a>
               </p>
             </div>

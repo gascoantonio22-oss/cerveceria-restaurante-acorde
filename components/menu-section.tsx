@@ -101,8 +101,15 @@ const menuCategories: MenuCategory[] = [
 
 export function MenuSection() {
   return (
-    <section id="carta" className="pt-10 pb-24 md:pt-20 lg:py-32 relative overflow-hidden bg-[#f2ede7]">
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-[#f6f1eb] to-[#f2ede7]" />
+    <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-4 pb-24 md:pt-12 lg:py-28">
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background via-[#f7f1ea] to-transparent" />
+      <div className="absolute inset-x-0 top-0 flex justify-center pt-4">
+        <div className="flex items-center gap-3 text-primary/24">
+          <div className="h-px w-12 bg-current" />
+          <div className="h-2.5 w-2.5 rounded-full border border-current bg-current/20" />
+          <div className="h-px w-12 bg-current" />
+        </div>
+      </div>
       <div
         className="absolute inset-0"
         style={{
@@ -114,7 +121,7 @@ export function MenuSection() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-700">
         <div className="text-center mb-10 md:mb-16">
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             El Mural de Acorde
@@ -122,14 +129,27 @@ export function MenuSection() {
           <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
             La Carta
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-            En escritorio puedes recorrerla por categorías; en móvil la he compactado para que cambiar de
-            una a otra sea mucho más cómodo. He dejado fuera los precios para que la sección sea más limpia.
-          </p>
+          <div className="mt-6 max-w-4xl mx-auto space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <p>
+              Una carta pensada para el tapeo y para compartir: conservas y salazones de barra,
+              embutidos clásicos, frituras, mariscos, platos castizos y algunas carnes y pescados para
+              alargar la mesa.
+            </p>
+            <p>
+              Producto sencillo, bien elegido y sin complicaciones. De la gilda y los boquerones al
+              jamón ibérico, los torreznos o unos buenos huevos rotos, con guisos de cuchara y platos
+              para sentarse sin prisa.
+            </p>
+          </div>
         </div>
 
         <div className="md:hidden">
-          <Accordion type="single" collapsible defaultValue="conservas" className="rounded-sm border border-border bg-card shadow-sm">
+          <Accordion
+            type="single"
+            collapsible
+            defaultValue="conservas"
+            className="rounded-[1.5rem] border border-border/80 bg-card/90 shadow-[0_24px_50px_rgba(0,0,0,0.07)] backdrop-blur-sm"
+          >
             {menuCategories.map((category) => (
               <AccordionItem key={category.id} value={category.id} className="border-border px-5">
                 <AccordionTrigger className="py-5 hover:no-underline">
@@ -151,7 +171,7 @@ export function MenuSection() {
                     {category.items.map((item, index) => (
                       <article
                         key={item}
-                        className="rounded-sm border border-border/70 bg-background/80 px-4 py-3"
+                      className="rounded-[1rem] border border-border/70 bg-background/80 px-4 py-3"
                       >
                         <div className="flex items-start gap-3">
                           <span className="font-handwriting text-xl leading-none text-primary/70">
@@ -185,7 +205,7 @@ export function MenuSection() {
 
           {menuCategories.map((category) => (
             <TabsContent key={category.id} value={category.id}>
-              <div className="rounded-sm border border-border bg-card p-8 md:p-10 shadow-sm">
+              <div className="rounded-[2rem] border border-border/80 bg-card/92 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:p-10">
                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                   <div>
                     <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
@@ -205,7 +225,7 @@ export function MenuSection() {
                   {category.items.map((item, index) => (
                     <article
                       key={item}
-                      className="rounded-sm border border-border/70 bg-background/80 px-4 py-4 transition-colors hover:border-secondary hover:bg-background"
+                      className="rounded-[1rem] border border-border/70 bg-background/80 px-4 py-4 transition-colors hover:border-secondary hover:bg-background"
                     >
                       <div className="flex items-start gap-4">
                         <span className="font-handwriting text-xl text-primary/70 leading-none">
