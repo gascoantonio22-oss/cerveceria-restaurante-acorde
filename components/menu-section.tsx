@@ -124,12 +124,11 @@ export function MenuSection() {
             <span className="block text-sm font-medium uppercase tracking-widest text-muted-foreground">
               El Mural de Acorde
             </span>
-            <div className="mt-4 grid grid-cols-[3.2rem_auto_3.2rem] items-center gap-1.5 md:grid-cols-[5rem_auto_5rem] md:gap-2.5 lg:grid-cols-[5.8rem_auto_5.8rem]">
-              <div aria-hidden="true" className="h-full w-full" />
+            <div className="relative mt-4 inline-block">
               <h2 className="text-center font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground">
                 La Carta
               </h2>
-              <div className="relative mt-1 h-[3.2rem] w-[3.2rem] shrink-0 opacity-85 md:h-[4.9rem] md:w-[4.9rem] lg:h-[5.6rem] lg:w-[5.6rem]">
+              <div className="pointer-events-none absolute left-full top-1/2 ml-1.5 h-[3.2rem] w-[3.2rem] -translate-y-[46%] opacity-85 md:ml-2.5 md:h-[4.9rem] md:w-[4.9rem] lg:h-[5.6rem] lg:w-[5.6rem]">
                 <Image
                   src="/gilda-mark.png"
                   alt="Gilda de Acorde"
