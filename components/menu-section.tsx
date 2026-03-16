@@ -164,7 +164,7 @@ export function MenuSection() {
               <AccordionItem key={category.id} value={category.id} className="border-border px-5">
                 <AccordionTrigger className="flex-col items-center justify-center gap-3 py-5 text-center hover:no-underline [&>svg]:mx-auto [&>svg]:translate-y-0">
                   <div className="flex flex-col items-center text-center">
-                    <span className="block font-serif text-[2rem] leading-none text-foreground">
+                    <span className="block font-serif text-[1.55rem] leading-[0.95] text-foreground sm:text-[1.7rem]">
                       {category.title}
                     </span>
                   </div>
