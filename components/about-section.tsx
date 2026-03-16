@@ -14,14 +14,13 @@ function GildaIllustration({ className }: { className?: string }) {
 
 export function AboutSection() {
   return (
-    <section id="nosotros" className="relative overflow-hidden bg-background pt-8 pb-12 md:pt-24 md:pb-16 lg:py-32">
+    <section id="nosotros" className="relative overflow-hidden bg-[#fbf8f3] pt-8 pb-12 md:pt-24 md:pb-16 lg:py-32">
       <div className="absolute inset-x-0 top-4 flex justify-center md:hidden">
         <div className="h-px w-16 bg-border/55" />
       </div>
-      <div className="absolute inset-x-0 -top-10 hidden h-24 bg-[radial-gradient(ellipse_at_top,rgba(0,0,0,0.28),transparent_70%)] blur-2xl md:block" />
-      <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/10 via-black/[0.03] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent via-[#f7f2ec]/72 to-[#f2ede7]" />
-      <div className="absolute inset-x-0 bottom-[-2.5rem] h-20 bg-[radial-gradient(ellipse_at_center,rgba(242,237,231,0.95),rgba(242,237,231,0.4)_48%,transparent_80%)] blur-2xl" />
+      <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black/[0.06] via-black/[0.02] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent via-[#f6f1ea] to-[#f2ede7]" />
+      <div className="absolute inset-x-0 bottom-0 h-8 bg-[radial-gradient(ellipse_at_center,rgba(244,238,231,0.74),transparent_74%)]" />
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
