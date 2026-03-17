@@ -103,21 +103,24 @@ const menuCategories: MenuCategory[] = [
 export function MenuSection() {
   return (
     <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-12 pb-14 md:pt-16 md:pb-24 lg:pt-24 lg:pb-28">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 scale-[1.025]">
-          <Image
-            src="/menu-barra-bg.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-[center_38%] opacity-[0.42] blur-[0.55px] brightness-[0.95] contrast-[0.95] saturate-[0.86] md:opacity-[0.48] lg:opacity-[0.54]"
-          />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[34rem] overflow-hidden md:h-[38rem] lg:h-[42rem]">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 scale-[1.025]">
+            <Image
+              src="/menu-barra-bg.jpg"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-[center_38%] opacity-[0.42] blur-[0.55px] brightness-[0.95] contrast-[0.95] saturate-[0.86] md:opacity-[0.48] lg:opacity-[0.54]"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[rgba(248,244,238,0.68)] md:bg-[rgba(248,244,238,0.6)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.34),transparent_56%),linear-gradient(180deg,rgba(255,255,255,0.24),rgba(242,237,231,0.18)_24%,rgba(242,237,231,0.28)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent via-[#f2ede7]/82 to-[#f2ede7]" />
         </div>
-        <div className="absolute inset-0 bg-[rgba(248,244,238,0.68)] md:bg-[rgba(248,244,238,0.6)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.34),transparent_56%),linear-gradient(180deg,rgba(255,255,255,0.24),rgba(242,237,231,0.18)_24%,rgba(242,237,231,0.28)_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#f2ede7] via-[#f4efe8]/82 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.3),transparent_78%)]" />
       </div>
-      <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#f2ede7] via-[#f4efe8]/82 to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-10 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.3),transparent_78%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-16">
@@ -125,7 +128,7 @@ export function MenuSection() {
             <span className="block text-sm font-medium uppercase tracking-widest text-muted-foreground">
               El Mural de Acorde
             </span>
-            <div className="mt-4 flex translate-x-2 items-center justify-center gap-1.5 md:translate-x-0 md:gap-3.5">
+            <div className="mt-4 flex items-center justify-center gap-1.5 md:gap-3.5">
               <h2 className="text-center font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-none text-foreground">
                 La Carta
               </h2>
