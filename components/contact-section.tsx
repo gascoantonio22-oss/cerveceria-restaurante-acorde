@@ -1,15 +1,64 @@
+"use client"
+
+import { useEffect, useEffectEvent, useRef, useState } from "react"
 import { MapPin, Clock, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 const reservationUrl =
   "https://widget.thefork.com/es/66d18784-cfb1-4312-80f3-1df9bd68ca73?utm_source=google.com&step=date"
 
 export function ContactSection() {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const revealSection = useEffectEvent(() => {
+    setIsVisible(true)
+  })
+
+  useEffect(() => {
+    const section = sectionRef.current
+
+    if (!section) {
+      return
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsVisible(true)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return
+        }
+
+        revealSection()
+        observer.disconnect()
+      },
+      {
+        threshold: 0.22,
+        rootMargin: "0px 0px -12% 0px",
+      },
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [revealSection])
+
   return (
-    <section id="contacto" className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-28">
+    <section
+      ref={sectionRef}
+      id="contacto"
+      className="relative overflow-hidden bg-[#050505] py-24 text-white lg:py-28"
+    >
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fbf8f3] via-[#7d6858]/10 to-transparent" />
       <div className="absolute left-1/2 top-0 h-24 w-60 -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),transparent_70%)] blur-3xl" />
+      <div className="absolute inset-x-0 top-[-2rem] h-28 bg-[radial-gradient(ellipse_at_center,rgba(251,248,243,0.9),rgba(251,248,243,0.22)_42%,transparent_78%)] blur-2xl" />
       <div className="absolute inset-x-0 top-5 flex justify-center">
         <div className="flex items-center gap-3 text-white/22">
           <div className="h-px w-10 bg-current" />
@@ -31,7 +80,40 @@ export function ContactSection() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="space-y-12">
-          <div className="mx-auto max-w-3xl text-center">
+          <div
+            className={cn(
+              "flex justify-center pt-3 transition-all duration-1000 ease-out md:pt-0",
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
+            )}
+          >
+            <div className="flex items-center gap-4 text-white/72 md:gap-5">
+              <div
+                className={cn(
+                  "h-px bg-gradient-to-r from-transparent via-[#fbf8f3] to-white/10 transition-all duration-[1400ms] ease-out",
+                  isVisible ? "w-16 md:w-28" : "w-0",
+                )}
+              />
+              <div
+                className={cn(
+                  "h-2.5 w-2.5 rounded-full bg-[#fbf8f3] shadow-[0_0_0_10px_rgba(251,248,243,0.12)] transition-all duration-[1400ms] ease-out",
+                  isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0",
+                )}
+              />
+              <div
+                className={cn(
+                  "h-px bg-gradient-to-l from-transparent via-[#fbf8f3] to-white/10 transition-all duration-[1400ms] ease-out",
+                  isVisible ? "w-16 md:w-28" : "w-0",
+                )}
+              />
+            </div>
+          </div>
+
+          <div
+            className={cn(
+              "mx-auto max-w-3xl text-center transition-all duration-1000 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100",
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0",
+            )}
+          >
             <span className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">
               Jorge Juan, Madrid
             </span>
@@ -66,7 +148,12 @@ export function ContactSection() {
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-            <div className="order-2 lg:order-1">
+            <div
+              className={cn(
+                "order-2 transition-all duration-[1100ms] ease-out motion-reduce:translate-x-0 motion-reduce:opacity-100 lg:order-1",
+                isVisible ? "translate-x-0 opacity-100" : "translate-x-[-2.25rem] opacity-0",
+              )}
+            >
               <div className="grid gap-5 rounded-[1.75rem] border border-white/7 bg-white/[0.02] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-sm md:p-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/[0.03]">
@@ -138,7 +225,12 @@ export function ContactSection() {
 
             </div>
 
-            <div className="order-1 lg:order-2">
+            <div
+              className={cn(
+                "order-1 transition-all duration-[1200ms] ease-out motion-reduce:translate-x-0 motion-reduce:opacity-100 lg:order-2",
+                isVisible ? "translate-x-0 opacity-100" : "translate-x-[2.25rem] opacity-0",
+              )}
+            >
               <div className="relative">
                 <div className="absolute -inset-3 rounded-[2rem] border border-white/8" />
                 <div className="absolute -left-3 top-8 hidden h-28 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent lg:block" />
@@ -157,7 +249,12 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="flex justify-center pt-8 lg:pt-12">
+          <div
+            className={cn(
+              "flex justify-center pt-8 transition-all duration-1000 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 lg:pt-12",
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
+            )}
+          >
             <div className="flex items-center gap-3 text-white/40">
               <div className="h-px w-16 bg-current/60" />
               <div className="h-1.5 w-1.5 rounded-full bg-current" />
