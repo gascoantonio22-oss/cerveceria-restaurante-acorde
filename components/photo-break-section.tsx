@@ -9,6 +9,7 @@ type PhotoBreakSectionProps = {
   sizeClassName?: string
   topFadeClassName?: string
   bottomFadeClassName?: string
+  motionMultiplier?: number
 }
 
 export function PhotoBreakSection({
@@ -17,6 +18,7 @@ export function PhotoBreakSection({
   sizeClassName,
   topFadeClassName,
   bottomFadeClassName,
+  motionMultiplier = 1,
 }: PhotoBreakSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null)
   const [imageOffset, setImageOffset] = useState(0)
@@ -36,9 +38,10 @@ export function PhotoBreakSection({
     const maxDistance = (viewportHeight + rect.height) / 2
     const progress = Math.max(-1, Math.min(1, distanceFromCenter / maxDistance))
     const isMobile = window.innerWidth < 768
-    const amplitude = isMobile
+    const baseAmplitude = isMobile
       ? Math.min(52, Math.max(22, rect.height * 0.34))
       : Math.min(68, Math.max(24, rect.height * 0.24))
+    const amplitude = baseAmplitude * motionMultiplier
 
     setImageOffset(Math.round(-progress * amplitude))
   })
@@ -83,7 +86,7 @@ export function PhotoBreakSection({
       )}
     >
       <div
-        className="pointer-events-none absolute inset-x-0 -top-[16%] -bottom-[16%] will-change-transform"
+        className="pointer-events-none absolute inset-x-0 -top-[22%] -bottom-[22%] will-change-transform"
         style={{ transform: `translate3d(0, ${imageOffset}px, 0)` }}
       >
         <div

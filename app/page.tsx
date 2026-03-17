@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <section className="relative h-[118svh] md:h-[122svh] lg:h-[124svh]">
-        <div className="sticky top-0">
+      <section className="relative h-[134svh] md:h-[140svh] lg:h-[144svh]">
+        <div className="sticky top-0 z-0">
           <HeroSection />
         </div>
       </section>
-      <div className="relative z-20 -mt-[18svh] md:-mt-[22svh] lg:-mt-[24svh]">
+      <div className="relative z-20 -mt-[26svh] md:-mt-[30svh] lg:-mt-[32svh]">
         <AboutSection />
       </div>
       <PhotoBreakSection
@@ -23,6 +23,7 @@ export default function Home() {
         heightClassName="h-[24vh] min-h-[8rem] md:h-[28vh] lg:h-[32vh]"
         topFadeClassName="from-[#fbf8f3] via-[#f5eee5]/76"
         bottomFadeClassName="via-[#f4efe8]/28 to-[#f4efe8]"
+        motionMultiplier={1.65}
       />
       <MenuSection />
       <ContactSection />

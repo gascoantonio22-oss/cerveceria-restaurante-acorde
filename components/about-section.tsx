@@ -19,8 +19,24 @@ function GildaIllustration({ className }: { className?: string }) {
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [coverProgress, setCoverProgress] = useState(0)
   const revealSection = useEffectEvent(() => {
     setIsVisible(true)
+  })
+  const updateCoverProgress = useEffectEvent(() => {
+    const section = sectionRef.current
+
+    if (!section) {
+      return
+    }
+
+    const rect = section.getBoundingClientRect()
+    const viewportHeight = window.innerHeight
+    const start = viewportHeight * 1.04
+    const end = viewportHeight * 0.28
+    const progress = (start - rect.top) / (start - end)
+
+    setCoverProgress(Math.min(1, Math.max(0, progress)))
   })
 
   useEffect(() => {
@@ -32,6 +48,7 @@ export function AboutSection() {
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setIsVisible(true)
+      setCoverProgress(1)
       return
     }
 
@@ -52,24 +69,50 @@ export function AboutSection() {
 
     observer.observe(section)
 
+    let ticking = false
+    const handleUpdate = () => {
+      if (ticking) {
+        return
+      }
+
+      ticking = true
+      window.requestAnimationFrame(() => {
+        updateCoverProgress()
+        ticking = false
+      })
+    }
+
+    updateCoverProgress()
+    window.addEventListener("scroll", handleUpdate, { passive: true })
+    window.addEventListener("resize", handleUpdate)
+
     return () => {
       observer.disconnect()
+      window.removeEventListener("scroll", handleUpdate)
+      window.removeEventListener("resize", handleUpdate)
     }
-  }, [revealSection])
+  }, [revealSection, updateCoverProgress])
+
+  const coverOffset = Math.round((1 - coverProgress) * 96)
+  const coverShadow = 0.18 + (1 - coverProgress) * 0.06
 
   return (
     <section
       ref={sectionRef}
       id="nosotros"
-      className="relative overflow-hidden rounded-t-[2.4rem] bg-[#fbf8f3] pt-12 pb-12 shadow-[0_-26px_70px_rgba(0,0,0,0.18)] md:rounded-t-[3.2rem] md:pt-20 md:pb-16 lg:rounded-t-[3.6rem] lg:pt-24 lg:pb-24"
+      className="relative z-20 overflow-hidden rounded-t-[2.6rem] bg-[#fbf8f3] pt-14 pb-12 md:rounded-t-[3.4rem] md:pt-24 md:pb-16 lg:rounded-t-[3.9rem] lg:pt-28 lg:pb-24"
+      style={{
+        transform: `translate3d(0, ${coverOffset}px, 0)`,
+        boxShadow: `0 -30px 84px rgba(0,0,0,${coverShadow})`,
+      }}
     >
       <div className="absolute inset-x-0 top-4 flex justify-center md:hidden">
         <div className="h-px w-16 bg-border/55" />
       </div>
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0a0a0a]/18 via-[#f5ebdf]/72 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#050505]/22 via-[#f5ebdf]/76 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent via-[#f6f1ea] to-[#f2ede7]" />
       <div className="absolute inset-x-0 bottom-0 h-8 bg-[radial-gradient(ellipse_at_center,rgba(244,238,231,0.74),transparent_74%)]" />
-      <div className="absolute inset-x-0 top-0 h-36 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.13),transparent_74%)] blur-2xl" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.13),transparent_74%)] blur-2xl" />
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
