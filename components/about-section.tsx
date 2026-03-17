@@ -93,14 +93,14 @@ export function AboutSection() {
     }
   }, [revealSection, updateCoverProgress])
 
-  const contentOffset = Math.round((1 - coverProgress) * 64)
+  const contentOffset = Math.round((1 - coverProgress) * 36)
   const coverShadow = 0.18 + (1 - coverProgress) * 0.06
 
   return (
     <section
       ref={sectionRef}
       id="nosotros"
-      className="relative z-20 overflow-hidden rounded-t-[2.6rem] bg-[#fbf8f3] pt-8 pb-12 md:rounded-t-[3.4rem] md:pt-10 md:pb-16 lg:rounded-t-[3.9rem] lg:pt-12 lg:pb-24"
+      className="relative z-20 overflow-hidden rounded-t-[2.6rem] bg-[#fbf8f3] pt-4 pb-12 md:rounded-t-[3.4rem] md:pt-6 md:pb-16 lg:rounded-t-[3.9rem] lg:pt-8 lg:pb-24"
       style={{
         boxShadow: `0 -30px 84px rgba(0,0,0,${coverShadow})`,
       }}
@@ -123,7 +123,7 @@ export function AboutSection() {
       >
         <div
           className={cn(
-            "flex justify-center pb-8 pt-3 transition-all duration-1000 ease-out md:pb-10 md:pt-1",
+            "flex justify-center pb-6 pt-2 transition-all duration-1000 ease-out md:pb-8 md:pt-1",
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
         >

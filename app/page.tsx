@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <section className="relative h-[134svh] md:h-[140svh] lg:h-[144svh]">
+      <section className="relative h-[128svh] md:h-[130svh] lg:h-[132svh]">
         <div className="sticky top-0 z-0">
           <HeroSection />
         </div>
       </section>
-      <div className="relative z-20 -mt-[26svh] md:-mt-[30svh] lg:-mt-[32svh]">
+      <div className="relative z-20 -mt-[28svh] md:-mt-[30svh] lg:-mt-[32svh]">
         <AboutSection />
       </div>
       <PhotoBreakSection
