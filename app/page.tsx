@@ -26,12 +26,6 @@ export default function Home() {
       />
       <MenuSection />
       <ContactSection />
-      <PhotoBreakSection
-        positionClassName="bg-[center_12%] md:bg-[center_18%]"
-        heightClassName="h-[14vh] min-h-[4.75rem] md:h-[18vh] lg:h-[20vh]"
-        topFadeClassName="from-[#050505] via-[#050505]/74"
-        bottomFadeClassName="via-[#020202]/36 to-[#020202]"
-      />
       <Footer />
     </main>
   )
