@@ -61,15 +61,15 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="nosotros"
-      className="relative overflow-hidden bg-[#fbf8f3] pt-8 pb-12 md:pt-24 md:pb-16 lg:py-32"
+      className="relative z-20 -mt-10 overflow-hidden rounded-t-[2rem] bg-[#fbf8f3] pt-10 pb-12 shadow-[0_-22px_60px_rgba(0,0,0,0.14)] md:-mt-16 md:rounded-t-[2.8rem] md:pt-20 md:pb-16 lg:-mt-20 lg:rounded-t-[3.2rem] lg:pt-24 lg:pb-24"
     >
       <div className="absolute inset-x-0 top-4 flex justify-center md:hidden">
         <div className="h-px w-16 bg-border/55" />
       </div>
-      <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black/[0.06] via-black/[0.02] to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/[0.08] via-black/[0.025] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent via-[#f6f1ea] to-[#f2ede7]" />
       <div className="absolute inset-x-0 bottom-0 h-8 bg-[radial-gradient(ellipse_at_center,rgba(244,238,231,0.74),transparent_74%)]" />
-      <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.16),transparent_74%)] blur-2xl" />
+      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.14),transparent_74%)] blur-2xl" />
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
@@ -78,7 +78,7 @@ export function AboutSection() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div
           className={cn(
-            "flex justify-center pb-10 pt-4 transition-all duration-1000 ease-out md:pb-14 md:pt-0",
+            "flex justify-center pb-10 pt-4 transition-all duration-1000 ease-out md:pb-14 md:pt-1",
             isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
           )}
         >
@@ -109,7 +109,7 @@ export function AboutSection() {
           <div
             className={cn(
               "order-2 transition-all duration-1000 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 lg:order-1",
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0",
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-14 opacity-0",
             )}
           >
             <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">

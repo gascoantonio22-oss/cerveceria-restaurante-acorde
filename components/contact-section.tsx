@@ -116,7 +116,7 @@ export function ContactSection() {
             <span className="text-sm font-medium uppercase tracking-[0.24em] text-white/55">
               Jorge Juan, Madrid
             </span>
-            <h2 className="mt-4 font-serif text-4xl text-white md:text-5xl lg:text-6xl font-medium">
+            <h2 className="mt-4 font-serif text-4xl tracking-[0.02em] text-white md:text-5xl lg:text-6xl font-normal">
               Visítanos
             </h2>
             <div className="mt-10 flex flex-col items-center gap-6 text-center">
@@ -151,7 +151,10 @@ export function ContactSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/28 via-transparent to-transparent" />
               </div>
             </div>
-            <p className="mt-5 text-center text-[0.72rem] uppercase tracking-[0.18em] text-white/42 md:text-xs">
+            <p className="mt-6 text-center font-serif text-lg tracking-[0.04em] text-white/90 md:text-[1.25rem]">
+              C. de Jorge Juan, 104 · Salamanca, Madrid
+            </p>
+            <p className="mt-2 text-center text-[0.72rem] uppercase tracking-[0.18em] text-white/42 md:text-xs">
               Miércoles a sábado 13:00 - 23:30 · Domingo 13:00 - 16:30 · Lunes y martes cerrado
             </p>
           </div>
