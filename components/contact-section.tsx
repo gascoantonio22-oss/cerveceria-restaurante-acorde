@@ -58,13 +58,6 @@ export function ContactSection() {
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#fbf8f3] via-[#7d6858]/10 to-transparent" />
       <div className="absolute left-1/2 top-0 h-24 w-60 -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),transparent_70%)] blur-3xl" />
       <div className="absolute inset-x-0 top-[-2rem] h-28 bg-[radial-gradient(ellipse_at_center,rgba(251,248,243,0.9),rgba(251,248,243,0.22)_42%,transparent_78%)] blur-2xl" />
-      <div className="absolute inset-x-0 top-5 flex justify-center">
-        <div className="flex items-center gap-3 text-white/22">
-          <div className="h-px w-10 bg-current" />
-          <div className="h-1.5 w-1.5 rounded-full bg-current" />
-          <div className="h-px w-10 bg-current" />
-        </div>
-      </div>
       <div
         className="absolute inset-0"
         style={{
@@ -157,19 +150,6 @@ export function ContactSection() {
             <p className="mt-2 text-center text-[0.72rem] uppercase tracking-[0.18em] text-white/42 md:text-xs">
               Miércoles a sábado 13:00 - 23:30 · Domingo 13:00 - 16:30 · Lunes y martes cerrado
             </p>
-          </div>
-
-          <div
-            className={cn(
-              "flex justify-center pt-8 transition-all duration-1000 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 lg:pt-12",
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
-            )}
-          >
-            <div className="flex items-center gap-3 text-white/40">
-              <div className="h-px w-16 bg-current/60" />
-              <div className="h-1.5 w-1.5 rounded-full bg-current" />
-              <div className="h-px w-16 bg-current/60" />
-            </div>
           </div>
         </div>
       </div>
