@@ -1,6 +1,10 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { cn } from "@/lib/utils"
 
 type MenuCategory = {
   id: string
@@ -100,7 +104,41 @@ const menuCategories: MenuCategory[] = [
   },
 ]
 
+const menuShowcases: Partial<
+  Record<
+    MenuCategory["id"],
+    {
+      eyebrow: string
+      title: string
+      description: string
+    }
+  >
+> = {
+  conservas: {
+    eyebrow: "Primera parada",
+    title: "La barra abre la carta",
+    description: "Una imagen que entra al inicio y se queda detrás como un acompañamiento sutil del primer pase.",
+  },
+  postres: {
+    eyebrow: "Última parada",
+    title: "La sobremesa cierra el viaje",
+    description: "La misma foto desciende hasta el final para rematar la carta con un gesto visual más elegante.",
+  },
+}
+
 export function MenuSection() {
+  const [activeMobileCategory, setActiveMobileCategory] = useState<string | undefined>("conservas")
+  const [activeDesktopCategory, setActiveDesktopCategory] = useState("conservas")
+  const activeMobileShowcase = activeMobileCategory ? menuShowcases[activeMobileCategory] : undefined
+  const activeDesktopShowcase = menuShowcases[activeDesktopCategory]
+  const showDesktopShowcase = Boolean(activeDesktopShowcase)
+  const desktopShowcaseTransform =
+    activeDesktopCategory === "conservas"
+      ? "translateY(0)"
+      : activeDesktopCategory === "postres"
+        ? "translateY(calc(100% - 13.75rem))"
+        : "translateY(calc(50% - 6.875rem))"
+
   return (
     <section id="carta" className="relative overflow-hidden bg-[#f2ede7] pt-12 pb-14 md:pt-16 md:pb-24 lg:pt-24 lg:pb-28">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[34rem] overflow-hidden md:h-[38rem] lg:h-[42rem]">
@@ -157,11 +195,40 @@ export function MenuSection() {
           </div>
         </div>
 
+        <div
+          className={cn(
+            "overflow-hidden transition-[max-height,opacity,margin] duration-700 ease-out md:hidden",
+            activeMobileShowcase ? "mb-6 max-h-[19rem] opacity-100" : "mb-0 max-h-0 opacity-0",
+          )}
+        >
+          <div className="relative mx-auto max-w-[22rem] overflow-hidden rounded-[1.5rem] border border-white/40 shadow-[0_22px_50px_rgba(0,0,0,0.14)]">
+            <div className="relative aspect-[5/4]">
+              <Image
+                src="/menu-barra-bg.jpg"
+                alt="Barra y ambiente de Acorde"
+                fill
+                sizes="(max-width: 768px) 90vw, 360px"
+                className="object-cover object-[center_40%]"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,11,8,0.06),rgba(16,11,8,0.2)_38%,rgba(16,11,8,0.72)_100%)]" />
+            </div>
+            <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+              <p className="text-[0.68rem] font-medium uppercase tracking-[0.22em] text-white/65">
+                {activeMobileShowcase?.eyebrow}
+              </p>
+              <p className="mt-2 font-serif text-[1.55rem] leading-none">
+                {activeMobileShowcase?.title}
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="md:hidden">
           <Accordion
             type="single"
             collapsible
-            defaultValue="conservas"
+            value={activeMobileCategory}
+            onValueChange={(value) => setActiveMobileCategory(value || undefined)}
             className="mx-auto max-w-3xl rounded-[1.5rem] border border-border/80 bg-card/90 shadow-[0_24px_50px_rgba(0,0,0,0.07)] backdrop-blur-sm"
           >
             {menuCategories.map((category) => (
@@ -203,7 +270,11 @@ export function MenuSection() {
           </Accordion>
         </div>
 
-        <Tabs defaultValue="conservas" className="hidden gap-6 md:flex md:flex-col md:items-center">
+        <Tabs
+          value={activeDesktopCategory}
+          onValueChange={setActiveDesktopCategory}
+          className="hidden gap-6 md:flex md:flex-col md:items-center"
+        >
           <div className="flex w-full justify-center overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <TabsList className="mx-auto min-w-max h-auto gap-1 rounded-full bg-foreground/[0.04] p-1">
               {menuCategories.map((category) => (
@@ -218,42 +289,82 @@ export function MenuSection() {
             </TabsList>
           </div>
 
-          {menuCategories.map((category) => (
-            <TabsContent key={category.id} value={category.id} className="w-full max-w-[61rem]">
-              <div className="rounded-[2rem] border border-border/80 bg-card/92 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:p-10">
-                <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                  <div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-                      {category.label}
-                    </span>
-                    <h3 className="mt-3 font-serif text-3xl md:text-4xl font-medium text-foreground">
-                      {category.title}
-                    </h3>
-                    <p className="mt-3 text-muted-foreground max-w-2xl">{category.subtitle}</p>
+          <div className="relative w-full max-w-[61rem]">
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden xl:block">
+              <div className="absolute inset-y-8 right-0 w-[15.75rem]">
+                <div
+                  className={cn(
+                    "absolute inset-x-0 top-0 h-[13.75rem] overflow-hidden rounded-[1.85rem] border border-white/46 shadow-[0_26px_60px_rgba(0,0,0,0.14)] transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    showDesktopShowcase ? "opacity-100 blur-0" : "opacity-0 blur-sm",
+                  )}
+                  style={{ transform: desktopShowcaseTransform }}
+                >
+                  <Image
+                    src="/menu-barra-bg.jpg"
+                    alt="Barra principal de Acorde"
+                    fill
+                    sizes="252px"
+                    className="object-cover object-[center_40%]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,16,12,0.08),rgba(24,16,12,0.14)_34%,rgba(24,16,12,0.78)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="text-[0.66rem] font-medium uppercase tracking-[0.22em] text-white/62">
+                      {activeDesktopShowcase?.eyebrow ?? ""}
+                    </p>
+                    <p className="mt-2 font-serif text-[1.72rem] leading-none">
+                      {activeDesktopShowcase?.title ?? ""}
+                    </p>
+                    <p className="mt-3 max-w-[11rem] text-sm leading-relaxed text-white/72">
+                      {activeDesktopShowcase?.description ?? ""}
+                    </p>
                   </div>
-                  {category.note ? (
-                    <p className="text-sm text-muted-foreground md:max-w-xs md:text-right">{category.note}</p>
-                  ) : null}
                 </div>
-
-                <div className="mt-8 grid gap-4 md:grid-cols-2">
-                  {category.items.map((item, index) => (
-                    <article
-                      key={item}
-                      className="rounded-[1rem] border border-border/70 bg-background/80 px-4 py-4 transition-colors hover:border-secondary hover:bg-background"
-                    >
-                      <div className="flex items-start gap-4">
-                        <span className="font-handwriting text-xl text-primary/70 leading-none">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <p className="font-medium text-foreground leading-snug">{item}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
+                <div className="absolute inset-y-0 left-[-4.75rem] w-28 bg-gradient-to-r from-[#f8f4ee] via-[#f8f4ee]/82 to-transparent" />
               </div>
-            </TabsContent>
-          ))}
+            </div>
+
+            {menuCategories.map((category) => (
+              <TabsContent key={category.id} value={category.id} className="relative z-10 w-full">
+                <div
+                  className={cn(
+                    "rounded-[2rem] border border-border/80 bg-card/92 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:p-10",
+                    showDesktopShowcase ? "xl:pr-[19rem]" : "xl:pr-10",
+                  )}
+                >
+                  <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                    <div>
+                      <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+                        {category.label}
+                      </span>
+                      <h3 className="mt-3 font-serif text-3xl md:text-4xl font-medium text-foreground">
+                        {category.title}
+                      </h3>
+                      <p className="mt-3 max-w-2xl text-muted-foreground">{category.subtitle}</p>
+                    </div>
+                    {category.note ? (
+                      <p className="text-sm text-muted-foreground md:max-w-xs md:text-right">{category.note}</p>
+                    ) : null}
+                  </div>
+
+                  <div className="mt-8 grid gap-4 md:grid-cols-2">
+                    {category.items.map((item, index) => (
+                      <article
+                        key={item}
+                        className="rounded-[1rem] border border-border/70 bg-background/80 px-4 py-4 transition-colors hover:border-secondary hover:bg-background"
+                      >
+                        <div className="flex items-start gap-4">
+                          <span className="font-handwriting text-xl text-primary/70 leading-none">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <p className="font-medium text-foreground leading-snug">{item}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </TabsContent>
+            ))}
+          </div>
         </Tabs>
 
         <div className="mt-10 flex justify-center md:hidden">
