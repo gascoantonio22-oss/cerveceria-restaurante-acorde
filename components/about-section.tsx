@@ -121,34 +121,6 @@ export function AboutSection() {
         className="relative mx-auto max-w-7xl px-6 lg:px-8"
         style={{ transform: `translate3d(0, ${contentOffset}px, 0)` }}
       >
-        <div
-          className={cn(
-            "flex justify-center pb-6 pt-2 transition-all duration-1000 ease-out md:pb-8 md:pt-1",
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
-          )}
-        >
-          <div className="flex items-center gap-4 text-secondary/70 md:gap-5">
-            <div
-              className={cn(
-                "h-px bg-gradient-to-r from-transparent via-secondary to-secondary/10 transition-all duration-[1400ms] ease-out",
-                isVisible ? "w-16 md:w-28" : "w-0",
-              )}
-            />
-            <div
-              className={cn(
-                "h-2.5 w-2.5 rounded-full bg-secondary shadow-[0_0_0_10px_rgba(196,167,125,0.14)] transition-all duration-[1400ms] ease-out",
-                isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0",
-              )}
-            />
-            <div
-              className={cn(
-                "h-px bg-gradient-to-l from-transparent via-secondary to-secondary/10 transition-all duration-[1400ms] ease-out",
-                isVisible ? "w-16 md:w-28" : "w-0",
-              )}
-            />
-          </div>
-        </div>
-
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Text Content */}
           <div
