@@ -19,7 +19,7 @@ export default function Home() {
         <AboutSection />
       </div>
       <PhotoBreakSection
-        positionClassName="bg-[72%_18%] sm:bg-[74%_18%] md:bg-[76%_22%] lg:bg-[78%_22%]"
+        positionClassName="bg-[72%_30%] sm:bg-[74%_30%] md:bg-[76%_34%] lg:bg-[78%_34%]"
         heightClassName="h-[24vh] min-h-[8rem] md:h-[28vh] lg:h-[32vh]"
         topFadeClassName="from-[#fbf8f3] via-[#f5eee5]/76"
         bottomFadeClassName="via-[#f4efe8]/28 to-[#f4efe8]"
