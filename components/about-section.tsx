@@ -1,4 +1,8 @@
+"use client"
+
+import { useEffect, useEffectEvent, useRef, useState } from "react"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
 // SVG Illustration - Gilda (olive and anchovy on toothpick)
 function GildaIllustration({ className }: { className?: string }) {
@@ -13,23 +17,101 @@ function GildaIllustration({ className }: { className?: string }) {
 }
 
 export function AboutSection() {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const revealSection = useEffectEvent(() => {
+    setIsVisible(true)
+  })
+
+  useEffect(() => {
+    const section = sectionRef.current
+
+    if (!section) {
+      return
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsVisible(true)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return
+        }
+
+        revealSection()
+        observer.disconnect()
+      },
+      {
+        threshold: 0.24,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [revealSection])
+
   return (
-    <section id="nosotros" className="relative overflow-hidden bg-[#fbf8f3] pt-8 pb-12 md:pt-24 md:pb-16 lg:py-32">
+    <section
+      ref={sectionRef}
+      id="nosotros"
+      className="relative overflow-hidden bg-[#fbf8f3] pt-8 pb-12 md:pt-24 md:pb-16 lg:py-32"
+    >
       <div className="absolute inset-x-0 top-4 flex justify-center md:hidden">
         <div className="h-px w-16 bg-border/55" />
       </div>
       <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black/[0.06] via-black/[0.02] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent via-[#f6f1ea] to-[#f2ede7]" />
       <div className="absolute inset-x-0 bottom-0 h-8 bg-[radial-gradient(ellipse_at_center,rgba(244,238,231,0.74),transparent_74%)]" />
+      <div className="absolute inset-x-0 top-0 h-28 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.16),transparent_74%)] blur-2xl" />
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div
+          className={cn(
+            "flex justify-center pb-10 pt-4 transition-all duration-1000 ease-out md:pb-14 md:pt-0",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
+          )}
+        >
+          <div className="flex items-center gap-4 text-secondary/70 md:gap-5">
+            <div
+              className={cn(
+                "h-px bg-gradient-to-r from-transparent via-secondary to-secondary/10 transition-all duration-[1400ms] ease-out",
+                isVisible ? "w-16 md:w-28" : "w-0",
+              )}
+            />
+            <div
+              className={cn(
+                "h-2.5 w-2.5 rounded-full bg-secondary shadow-[0_0_0_10px_rgba(196,167,125,0.14)] transition-all duration-[1400ms] ease-out",
+                isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0",
+              )}
+            />
+            <div
+              className={cn(
+                "h-px bg-gradient-to-l from-transparent via-secondary to-secondary/10 transition-all duration-[1400ms] ease-out",
+                isVisible ? "w-16 md:w-28" : "w-0",
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Text Content */}
-          <div className="order-2 lg:order-1">
+          <div
+            className={cn(
+              "order-2 transition-all duration-1000 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 lg:order-1",
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0",
+            )}
+          >
             <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
               Nuestra esencia
             </span>
@@ -80,7 +162,13 @@ export function AboutSection() {
           </div>
 
           {/* Images */}
-          <div className="order-1 lg:order-2 relative">
+          <div
+            className={cn(
+              "order-1 relative transition-all duration-[1100ms] ease-out motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:opacity-100 lg:order-2",
+              isVisible ? "translate-y-0 scale-100 opacity-100" : "translate-y-12 scale-[0.97] opacity-0",
+            )}
+          >
+            <div className="absolute -inset-4 rounded-[2rem] border border-secondary/18 bg-[radial-gradient(circle_at_center,rgba(228,163,76,0.12),transparent_72%)] blur-xl" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border/50 shadow-[0_28px_70px_rgba(0,0,0,0.12)]">
               <Image
                 src="/acorde-fachada-hola.png"
