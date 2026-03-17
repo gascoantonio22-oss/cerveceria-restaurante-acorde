@@ -7,7 +7,7 @@ const reservationUrl =
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex h-[100svh] min-h-screen items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-[center_24%] bg-no-repeat md:hidden"
         style={{
