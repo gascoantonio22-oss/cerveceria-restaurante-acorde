@@ -28,9 +28,6 @@ export function Footer() {
             <SectionLink href="#carta" className="transition-colors hover:text-white/72">
               Carta
             </SectionLink>
-            <SectionLink href="#galeria" className="transition-colors hover:text-white/72">
-              Galería
-            </SectionLink>
             <SectionLink href="#contacto" className="transition-colors hover:text-white/72">
               Contacto
             </SectionLink>

@@ -40,7 +40,6 @@ export function Navbar() {
   const navLinks = [
     { href: "#nosotros", label: "La Cervecería" },
     { href: "#carta", label: "Carta" },
-    { href: "#galeria", label: "Galería" },
     { href: "#contacto", label: "Contacto" },
   ]
 
