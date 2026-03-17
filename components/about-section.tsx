@@ -19,8 +19,24 @@ function GildaIllustration({ className }: { className?: string }) {
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [liftProgress, setLiftProgress] = useState(0)
   const revealSection = useEffectEvent(() => {
     setIsVisible(true)
+  })
+  const updateLiftProgress = useEffectEvent(() => {
+    const section = sectionRef.current
+
+    if (!section) {
+      return
+    }
+
+    const rect = section.getBoundingClientRect()
+    const viewportHeight = window.innerHeight
+    const start = viewportHeight * 0.98
+    const end = viewportHeight * 0.26
+    const progress = (start - rect.top) / (start - end)
+
+    setLiftProgress(Math.min(1, Math.max(0, progress)))
   })
 
   useEffect(() => {
@@ -32,6 +48,7 @@ export function AboutSection() {
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setIsVisible(true)
+      setLiftProgress(1)
       return
     }
 
@@ -52,24 +69,55 @@ export function AboutSection() {
 
     observer.observe(section)
 
+    let ticking = false
+    const handleScroll = () => {
+      if (ticking) {
+        return
+      }
+
+      ticking = true
+      window.requestAnimationFrame(() => {
+        updateLiftProgress()
+        ticking = false
+      })
+    }
+
+    updateLiftProgress()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("resize", handleScroll)
+
     return () => {
       observer.disconnect()
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleScroll)
     }
-  }, [revealSection])
+  }, [revealSection, updateLiftProgress])
+
+  const sectionOffset = Math.round((1 - liftProgress) * 86)
+  const headerOffset = Math.round((1 - liftProgress) * 34)
+  const topImageOpacity = 0.34 - liftProgress * 0.2
+  const introOffset = headerOffset + (isVisible ? 0 : 18)
 
   return (
     <section
       ref={sectionRef}
       id="nosotros"
-      className="relative z-20 -mt-10 overflow-hidden rounded-t-[2rem] bg-[#fbf8f3] pt-10 pb-12 shadow-[0_-22px_60px_rgba(0,0,0,0.14)] md:-mt-16 md:rounded-t-[2.8rem] md:pt-20 md:pb-16 lg:-mt-20 lg:rounded-t-[3.2rem] lg:pt-24 lg:pb-24"
+      className="relative z-20 -mt-16 overflow-hidden rounded-t-[2.4rem] bg-[#fbf8f3] pt-12 pb-12 shadow-[0_-26px_70px_rgba(0,0,0,0.18)] md:-mt-24 md:rounded-t-[3.2rem] md:pt-20 md:pb-16 lg:-mt-28 lg:rounded-t-[3.6rem] lg:pt-24 lg:pb-24"
+      style={{
+        transform: `translate3d(0, ${sectionOffset}px, 0)`,
+      }}
     >
+      <div
+        className="absolute inset-x-0 top-0 h-32 bg-[url('/acorde-fachada-hola.png')] bg-[center_20%] bg-no-repeat bg-[length:145%_auto] opacity-30 sm:bg-[length:128%_auto] md:h-40 md:bg-[center_18%] md:bg-[length:100%_auto]"
+        style={{ opacity: topImageOpacity }}
+      />
       <div className="absolute inset-x-0 top-4 flex justify-center md:hidden">
         <div className="h-px w-16 bg-border/55" />
       </div>
-      <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/[0.08] via-black/[0.025] to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/[0.16] via-[#f2e6d4]/58 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent via-[#f6f1ea] to-[#f2ede7]" />
       <div className="absolute inset-x-0 bottom-0 h-8 bg-[radial-gradient(ellipse_at_center,rgba(244,238,231,0.74),transparent_74%)]" />
-      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.14),transparent_74%)] blur-2xl" />
+      <div className="absolute inset-x-0 top-0 h-36 bg-[radial-gradient(ellipse_at_center,rgba(228,163,76,0.16),transparent_74%)] blur-2xl" />
       {/* Floating illustration */}
       <div className="absolute top-20 right-10 opacity-10 hidden lg:block">
         <GildaIllustration className="w-16 h-32 text-primary" />
@@ -79,8 +127,11 @@ export function AboutSection() {
         <div
           className={cn(
             "flex justify-center pb-10 pt-4 transition-all duration-1000 ease-out md:pb-14 md:pt-1",
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
+            isVisible ? "opacity-100" : "opacity-0",
           )}
+          style={{
+            transform: `translate3d(0, ${introOffset}px, 0)`,
+          }}
         >
           <div className="flex items-center gap-4 text-secondary/70 md:gap-5">
             <div

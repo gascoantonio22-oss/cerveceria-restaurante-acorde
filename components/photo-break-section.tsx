@@ -22,7 +22,7 @@ export function PhotoBreakSection({
         "relative overflow-hidden bg-black bg-scroll bg-no-repeat md:bg-fixed",
         "h-[28vh] min-h-[10rem] md:h-[34vh] lg:h-[40vh]",
         "bg-[center_24%]",
-        "bg-cover md:bg-[length:100%_auto]",
+        "bg-[length:138%_auto] sm:bg-[length:122%_auto] md:bg-[length:106%_auto] lg:bg-[length:98%_auto]",
         heightClassName,
         positionClassName,
         sizeClassName,
