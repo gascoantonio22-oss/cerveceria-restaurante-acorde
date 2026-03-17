@@ -46,7 +46,10 @@ export function AboutSection() {
       return
     }
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(max-width: 767px)").matches
+    ) {
       setIsVisible(true)
       setCoverProgress(1)
       return

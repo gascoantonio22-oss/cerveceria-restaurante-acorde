@@ -47,7 +47,10 @@ export function PhotoBreakSection({
   })
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(max-width: 767px)").matches
+    ) {
       setImageOffset(0)
       return
     }
