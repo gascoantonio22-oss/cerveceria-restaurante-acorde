@@ -128,15 +128,15 @@ export function ContactSection() {
 
           <div
             className={cn(
-              "mx-auto max-w-5xl transition-all duration-[1200ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100",
+              "mx-auto w-full max-w-4xl transition-all duration-[1200ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100",
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0",
             )}
           >
-            <div className="relative">
+            <div className="relative mx-auto w-full max-w-[46rem]">
               <div className="absolute -inset-3 rounded-[2rem] border border-white/8" />
               <div className="absolute -left-3 top-8 hidden h-28 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent lg:block" />
               <div className="absolute -right-3 bottom-8 hidden h-28 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent lg:block" />
-              <div className="relative aspect-[5/4] overflow-hidden rounded-[1.6rem] border border-white/12 bg-white/[0.04] shadow-[0_28px_70px_rgba(0,0,0,0.35)] xl:aspect-[16/10]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.6rem] border border-white/12 bg-white/[0.04] shadow-[0_28px_70px_rgba(0,0,0,0.35)] sm:aspect-[16/11] xl:aspect-[16/10]">
                 <iframe
                   title="Mapa de Acorde Cervecería"
                   src="https://www.google.com/maps?q=C.%20de%20Jorge%20Juan%2C%20104%2C%20Salamanca%2C%2028009%20Madrid&z=17&output=embed"

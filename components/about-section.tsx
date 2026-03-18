@@ -103,7 +103,7 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="nosotros"
-      className="relative z-20 overflow-hidden rounded-t-[2.6rem] bg-[#fbf8f3] pt-4 pb-12 md:rounded-t-[3.4rem] md:pt-6 md:pb-16 lg:rounded-t-[3.9rem] lg:pt-8 lg:pb-24"
+      className="relative z-20 overflow-hidden bg-[#fbf8f3] pt-4 pb-12 md:rounded-t-[3.4rem] md:pt-6 md:pb-16 lg:rounded-t-[3.9rem] lg:pt-8 lg:pb-24"
       style={{
         boxShadow: `0 -30px 84px rgba(0,0,0,${coverShadow})`,
       }}
